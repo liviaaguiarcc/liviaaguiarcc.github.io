@@ -256,48 +256,52 @@
       </section>
 
       <section id="education" class="section education-section" aria-labelledby="education-title">
-        <div class="education-intro">
+        <div class="education-header">
           <div>
             <p class="eyebrow">Education & Credentials</p>
             <h2 id="education-title">Education</h2>
             <p class="education-summary">
-              My academic background, relevant programs, and selected
-              certifications related to language, data, and NLP.
+              Academic background, relevant programs, and selected credentials
+              related to language, data, and NLP.
             </p>
           </div>
           <a class="button secondary cv-button" href="CV_URL" target="_blank" rel="noreferrer">View full CV</a>
         </div>
 
-        <div class="education-content">
+        <div class="education-window" data-active-tab="01">
           <div class="education-tabs" role="tablist" aria-label="Education and credentials categories">
-            <button class="education-tab is-active" type="button" role="tab" id="tab-formal" aria-selected="true" aria-controls="panel-formal">Formal Education</button>
-            <button class="education-tab" type="button" role="tab" id="tab-programs" aria-selected="false" aria-controls="panel-programs" tabindex="-1">Programs & Coursework</button>
-            <button class="education-tab" type="button" role="tab" id="tab-certifications" aria-selected="false" aria-controls="panel-certifications" tabindex="-1">Certifications</button>
+            <button class="education-tab is-active" type="button" role="tab" id="tab-formal" aria-selected="true" aria-controls="panel-formal" data-tab-index="01">Formal Education</button>
+            <button class="education-tab" type="button" role="tab" id="tab-programs" aria-selected="false" aria-controls="panel-programs" data-tab-index="02" tabindex="-1">Programs & Coursework</button>
+            <button class="education-tab" type="button" role="tab" id="tab-certifications" aria-selected="false" aria-controls="panel-certifications" data-tab-index="03" tabindex="-1">Certifications</button>
+            <span class="tab-meta" aria-hidden="true">Selected / 01</span>
           </div>
 
-          <section class="formal-education education-panel" id="panel-formal" role="tabpanel" tabindex="0" aria-labelledby="tab-formal">
+          <section class="education-panel formal-education is-active" id="panel-formal" role="tabpanel" tabindex="0" aria-labelledby="tab-formal">
             <p class="credential-label">Formal Education</p>
             <h3 id="formal-education-title">Academic Degrees</h3>
-            <div class="degree-grid">
-              <article class="degree-card">
-                <span>Undergraduate</span>
-                <h4>B.A. in Translation</h4>
-                <p>Federal University of Paraíba (UFPB)</p>
+            <div class="academic-record">
+              <article class="academic-entry">
+                <div class="record-marker" aria-hidden="true"></div>
+                <div class="record-main">
+                  <span>Undergraduate</span>
+                  <h4>B.A. in Translation</h4>
+                  <p>Federal University of Paraíba — UFPB</p>
+                </div>
                 <small>[ADD DATES]</small>
               </article>
             </div>
           </section>
 
-          <section class="programs-block education-panel" id="panel-programs" role="tabpanel" tabindex="0" aria-labelledby="tab-programs" hidden>
+          <section class="education-panel programs-block" id="panel-programs" role="tabpanel" tabindex="0" aria-labelledby="tab-programs" hidden>
             <p class="credential-label">Relevant Programs & Coursework</p>
             <h3 id="programs-title">Selected academic and technical programs</h3>
-            <div class="program-list">
-              <article>
+            <div class="program-grid">
+              <article class="program-card featured-program">
                 <span>2026</span>
                 <h4>Global Consumer Intelligence (GCI) World Program</h4>
                 <p>Matsuo-Iwasawa Laboratory · The University of Tokyo</p>
               </article>
-              <article>
+              <article class="program-card coursework-card">
                 <span>[ADD DATES]</span>
                 <h4>Korea University — K-MOOC Coursework</h4>
                 <ul>
@@ -306,15 +310,15 @@
                   <li>Literary Data Analysis Practicum</li>
                 </ul>
               </article>
-              <article>
-                <span>In Progress</span>
+              <article class="program-card compact-program">
+                <span class="status-badge">In Progress</span>
                 <h4>IBM Data Analyst Professional Certificate</h4>
                 <p>Professional certificate program focused on data analysis foundations.</p>
               </article>
             </div>
           </section>
 
-          <section class="certifications-block education-panel" id="panel-certifications" role="tabpanel" tabindex="0" aria-labelledby="tab-certifications" hidden>
+          <section class="education-panel certifications-block" id="panel-certifications" role="tabpanel" tabindex="0" aria-labelledby="tab-certifications" hidden>
             <div class="certifications-heading">
               <div>
                 <p class="credential-label">Certifications</p>
@@ -322,7 +326,7 @@
               </div>
               <a class="text-link" href="CERTIFICATIONS_URL" target="_blank" rel="noreferrer">View all certifications</a>
             </div>
-            <div class="certification-list">
+            <div class="certification-table" aria-label="Selected certifications">
               <article>
                 <h4>Databases and SQL for Data Science with Python</h4>
                 <p>IBM</p>
