@@ -1,25 +1,9 @@
-const navToggle = document.querySelector(".nav-toggle");
-const siteNav = document.querySelector("#site-nav");
 const years = document.querySelectorAll("[data-year]");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 years.forEach((year) => {
   year.textContent = new Date().getFullYear();
 });
-
-if (navToggle && siteNav) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("is-open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  siteNav.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
-      siteNav.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
-    }
-  });
-}
 
 if (!reduceMotion && "IntersectionObserver" in window) {
   const observer = new IntersectionObserver((entries) => {
