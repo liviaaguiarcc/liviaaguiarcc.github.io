@@ -540,6 +540,11 @@ p {
   gap: 1.7rem;
 }
 
+.education-summary {
+  max-width: 440px;
+  margin-top: 1rem;
+}
+
 .cv-button {
   justify-self: start;
   margin-top: 1rem;
@@ -556,29 +561,32 @@ p {
 }
 
 .education-tabs {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  align-items: flex-end;
   gap: 0;
-  padding: 0;
+  padding: 0.6rem 0.6rem 0;
   border-bottom: 1px solid var(--border);
   background: rgba(239, 233, 236, 0.72);
+  overflow-x: auto;
 }
 
 .education-tab {
-  min-height: 3.4rem;
-  padding: 0.75rem 0.85rem;
-  border: 0;
-  border-right: 1px solid var(--border);
-  border-radius: 0;
-  background: transparent;
+  position: relative;
+  min-height: 3.2rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  border-radius: 16px 16px 0 0;
+  background: rgba(248, 244, 246, 0.42);
   color: var(--text-secondary);
   font-size: 0.82rem;
   font-weight: 900;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .education-tab:last-child {
-  border-right: 0;
+  border-right: 1px solid transparent;
 }
 
 .education-tab:hover {
@@ -587,10 +595,11 @@ p {
 }
 
 .education-tab.is-active {
-  position: relative;
   margin-bottom: -1px;
+  border-color: var(--border);
   background: rgba(248, 244, 246, 0.96);
   color: var(--text-primary);
+  box-shadow: 0 -10px 26px rgba(46, 59, 98, 0.05);
 }
 
 .education-tab.is-active::after {
@@ -629,7 +638,7 @@ p {
 
 .formal-education {
   padding: clamp(1.35rem, 3vw, 2rem);
-  background: linear-gradient(145deg, rgba(248, 244, 246, 0.96), rgba(202, 186, 200, 0.3));
+  background: linear-gradient(145deg, rgba(248, 244, 246, 0.96), rgba(202, 186, 200, 0.22));
 }
 
 .degree-grid {
@@ -972,16 +981,17 @@ p {
   }
 
   .education-tabs {
-    grid-template-columns: 1fr;
+    align-items: flex-end;
   }
 
   .education-tab {
-    border-right: 0;
-    border-bottom: 1px solid var(--border);
+    flex: 0 0 auto;
+    border-right: 1px solid transparent;
+    border-bottom: 0;
   }
 
   .education-tab:last-child {
-    border-bottom: 0;
+    border-right: 1px solid transparent;
   }
 
   .certifications-heading {
