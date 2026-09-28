@@ -548,17 +548,20 @@ p {
 .education-content {
   display: grid;
   align-content: start;
-  gap: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: rgba(248, 244, 246, 0.82);
+  box-shadow: 0 18px 52px rgba(46, 59, 98, 0.07);
+  overflow: hidden;
 }
 
 .education-tabs {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.45rem;
-  padding: 0.45rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: rgba(248, 244, 246, 0.66);
+  gap: 0.35rem;
+  padding: 0.55rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(239, 233, 236, 0.72);
 }
 
 .education-tab {
@@ -583,13 +586,6 @@ p {
   display: none;
 }
 
-.credential-block {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: rgba(248, 244, 246, 0.78);
-  box-shadow: 0 18px 52px rgba(46, 59, 98, 0.06);
-}
-
 .credential-label {
   display: block;
   margin-bottom: 0.45rem;
@@ -600,11 +596,11 @@ p {
   text-transform: uppercase;
 }
 
-.credential-block h3 {
+.education-panel h3 {
   font-size: 1.25rem;
 }
 
-.credential-block h4 {
+.education-panel h4 {
   color: var(--text-primary);
   font-size: 1rem;
   line-height: 1.35;
@@ -612,7 +608,6 @@ p {
 
 .formal-education {
   padding: clamp(1.35rem, 3vw, 2rem);
-  border-color: rgba(46, 59, 98, 0.28);
   background: linear-gradient(145deg, rgba(248, 244, 246, 0.96), rgba(202, 186, 200, 0.3));
 }
 
@@ -678,7 +673,7 @@ p {
 }
 
 .certifications-block {
-  padding: 1rem;
+  padding: clamp(1.15rem, 2.5vw, 1.6rem);
   background: rgba(248, 244, 246, 0.54);
 }
 
@@ -1000,7 +995,7 @@ p {
   .project-card,
   .info-card,
   .skill-group,
-  .credential-block,
+  .education-content,
   .contact {
     border-radius: 22px;
   }
