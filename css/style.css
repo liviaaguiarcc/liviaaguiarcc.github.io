@@ -558,17 +558,18 @@ p {
 .education-tabs {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.35rem;
-  padding: 0.55rem;
+  gap: 0;
+  padding: 0;
   border-bottom: 1px solid var(--border);
   background: rgba(239, 233, 236, 0.72);
 }
 
 .education-tab {
-  min-height: 2.85rem;
-  padding: 0 0.85rem;
+  min-height: 3.4rem;
+  padding: 0.75rem 0.85rem;
   border: 0;
-  border-radius: 999px;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
   background: transparent;
   color: var(--text-secondary);
   font-size: 0.82rem;
@@ -576,10 +577,30 @@ p {
   cursor: pointer;
 }
 
-.education-tab:hover,
+.education-tab:last-child {
+  border-right: 0;
+}
+
+.education-tab:hover {
+  background: rgba(202, 186, 200, 0.28);
+  color: var(--text-primary);
+}
+
 .education-tab.is-active {
-  background: var(--text-primary);
-  color: var(--surface);
+  position: relative;
+  margin-bottom: -1px;
+  background: rgba(248, 244, 246, 0.96);
+  color: var(--text-primary);
+}
+
+.education-tab.is-active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: rgba(248, 244, 246, 0.96);
 }
 
 .education-panel[hidden] {
@@ -952,7 +973,15 @@ p {
 
   .education-tabs {
     grid-template-columns: 1fr;
-    border-radius: 24px;
+  }
+
+  .education-tab {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .education-tab:last-child {
+    border-bottom: 0;
   }
 
   .certifications-heading {
