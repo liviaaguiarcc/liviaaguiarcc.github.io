@@ -1,6 +1,15 @@
-# Personal Portfolio
+# Portfolio
 
-Portfolio focused on Data Science, NLP and multilingual language technology.
+Multi-page personal portfolio focused on Language × Data × AI, with emphasis on Data Science, NLP, computational linguistics and multilingual language technology.
+
+## Pages
+
+- Home
+- About
+- Projects
+- Education
+- Research
+- Contact
 
 ## Stack
 
@@ -14,27 +23,25 @@ Portfolio focused on Data Science, NLP and multilingual language technology.
 ```text
 /
 ├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
+├── about.html
+├── projects.html
+├── education.html
+├── research.html
+├── contact.html
+├── css/style.css
+├── js/main.js
+├── js/projects.js
 ├── assets/
-│   ├── images/
+│   ├── decorative/
 │   ├── icons/
+│   ├── images/
+│   ├── projects/
 │   └── screenshots/
-├── projects/
-│   ├── hanlevel.html
-│   ├── nsmc.html
-│   └── hanparal.html
 ├── README.md
 └── .gitignore
 ```
 
-## Run locally
-
-Open `index.html` directly in a browser.
-
-Or start a local server:
+## Run Locally
 
 ```bash
 python -m http.server
@@ -42,31 +49,17 @@ python -m http.server
 
 Then open `http://localhost:8000`.
 
+## Editing Content
+
+- Profile text: `about.html`
+- Education content: `education.html`
+- Project cards: `projects.html`
+- Project case-study details: `js/projects.js`
+- Research content: `research.html`
+- Contact links: `contact.html`
+- Global styles: `css/style.css`
+- Screenshots and project images: `assets/screenshots/` or `assets/projects/`
+
 ## Deployment
 
-This repository is designed for GitHub Pages.
-
-1. Use a repository named `USERNAME.github.io`.
-2. Push the `main` branch to GitHub.
-3. Open `https://USERNAME.github.io`.
-
-If GitHub Pages is not active automatically, go to `Settings > Pages` and select
-the `main` branch as the source.
-
-## Updating Projects
-
-- Edit homepage project cards in `index.html`.
-- Edit case studies in `projects/hanlevel.html`, `projects/nsmc.html` and
-  `projects/hanparal.html`.
-- Replace placeholder links such as `GITHUB_URL`, `LIVE_DEMO_URL` and
-  `DEVPOST_URL` with verified URLs.
-
-## Replacing Images
-
-Place screenshots in `assets/screenshots/` and update the related project page.
-
-Suggested files:
-
-- `assets/screenshots/nsmc-length-distribution.png`
-- `assets/screenshots/nsmc-label-distribution.png`
-- `assets/screenshots/nsmc-features.png`
+This is a static GitHub Pages site. Push changes to the `main` branch of `liviaaguiarcc.github.io` and GitHub Pages will publish the site.

@@ -3,366 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Livia Aguiar's portfolio focused on Data Science, NLP, multilingual language technology and Korean-Portuguese language resources."
-    />
-    <meta property="og:title" content="Lívia Aguiar | Language × Data × AI" />
-    <meta
-      property="og:description"
-      content="Portfolio focused on Data Science, NLP, computational linguistics and Korean-Portuguese language technology."
-    />
+    <meta name="description" content="Lívia Aguiar's portfolio at the intersection of language, data, AI, NLP and multilingual language technology." />
+    <meta property="og:title" content="Lívia Aguiar — Language × Data × AI" />
+    <meta property="og:description" content="A soft-tech editorial portfolio focused on language data, NLP, computational linguistics and multilingual technology." />
     <meta property="og:type" content="website" />
-    <title>Lívia Aguiar | Language × Data × AI</title>
+    <title>Lívia Aguiar — Language × Data × AI</title>
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body data-page="home">
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <a class="logo" href="#home" aria-label="Lívia Aguiar home">Lívia Aguiar</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="sr-only">Open navigation</span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="nav" id="site-nav" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#research">Research</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+      <a class="brand" href="index.html" aria-label="Lívia Aguiar home">Lívia Aguiar</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a class="is-active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="education.html">Education</a>
+        <a href="research.html">Research</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </header>
-
-    <main id="home">
-      <section class="hero section" aria-labelledby="hero-title">
-        <div class="hero-content">
+    <main id="main" class="page-shell home-page">
+      <section class="home-hero reveal" aria-labelledby="home-title">
+        <div class="home-copy">
           <p class="eyebrow">Hi, I'm Lívia.</p>
-          <h1 id="hero-title">Language × Data × AI</h1>
-          <p class="hero-text">
-            I build data and NLP projects at the intersection of language,
-            technology and multilingual communication.
-          </p>
-          <p class="hero-support">
-            Translation background turned data and NLP practitioner, with a
-            particular interest in Korean-Portuguese language technology,
-            computational linguistics and multilingual NLP.
-          </p>
-          <div class="actions">
-            <a class="button primary" href="#projects">View Projects</a>
-            <a class="button secondary" href="https://github.com/liviaaguiarcc/" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="text-link" href="https://www.linkedin.com/in/liviaaguiarcc/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <h1 id="home-title">Language × Data × AI</h1>
+          <p class="lede">I work at the intersection of language, data and technology, with particular interests in multilingual NLP, Korean-Portuguese language technology and computational linguistics.</p>
+          <div class="action-row">
+            <a class="button primary" href="projects.html">Explore my work</a>
+            <a class="button ghost" href="about.html">About me</a>
+          </div>
+          <div class="social-line" aria-label="External links">
+            <a href="https://github.com/liviaaguiarcc/" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/liviaaguiarcc/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
-        <div class="language-visual" aria-label="Abstract language data visualization">
-          <div class="visual-card token-card">한국어</div>
-          <div class="visual-card token-card accent-card">Portuguese</div>
-          <div class="visual-card corpus-card">
-            <span></span><span></span><span></span><span></span>
-          </div>
-          <div class="node node-one"></div>
-          <div class="node node-two"></div>
-          <div class="node node-three"></div>
+        <div class="corpus-figure" aria-label="Abstract language data alignment visual">
+          <div class="sentence-pair"><span>KR</span><p>한국어 문장 데이터</p></div>
+          <div class="sentence-pair"><span>PT-BR</span><p>dados linguísticos paralelos</p></div>
+          <div class="alignment-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="token-cloud" aria-hidden="true"><b>NLP</b><b>corpus</b><b>데이터</b><b>AI</b></div>
         </div>
       </section>
-
-      <section id="about" class="section split-section" aria-labelledby="about-title">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">Language expertise becoming language technology.</h2>
-        </div>
-        <div class="text-block">
-          <p>
-            I come from a background in Translation and Linguistics and am
-            currently building my career at the intersection of data, natural
-            language processing and language technology.
-          </p>
-          <p>
-            My work is especially focused on multilingual language data, Korean
-            and Brazilian Portuguese, corpus development, data analysis and NLP.
-          </p>
-          <p>
-            I am interested in building tools and datasets that connect
-            linguistic knowledge with computational methods, particularly for
-            under-resourced language pairs.
-          </p>
-          <p>
-            In some projects and repositories, I may also appear as LAC
-            Cavalcanti.
-          </p>
-          <h3>Currently exploring</h3>
-          <ul class="tag-list" aria-label="Current areas of exploration">
-            <li>NLP</li>
-            <li>Data Science</li>
-            <li>Computational Linguistics</li>
-            <li>Korean NLP</li>
-            <li>Portuguese NLP</li>
-            <li>Corpus Building</li>
-            <li>Multilingual AI</li>
-            <li>Language Evaluation</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="projects" class="section" aria-labelledby="projects-title">
-        <div class="section-heading">
-          <p class="eyebrow">Selected Projects</p>
-          <h2 id="projects-title">Projects combining language, data and applied NLP.</h2>
-        </div>
-        <div class="project-grid">
-          <article class="project-card featured-card">
-            <div class="project-visual" role="img" aria-label="Abstract Korean text analysis interface placeholder">
-              <span>읽기</span><span>level</span><span>tokens</span>
-            </div>
-            <p class="project-category">NLP · Korean Language Technology · Educational Technology</p>
-            <h3>HanLevel</h3>
-            <p>
-              A Korean reading-level analysis tool designed to help learners
-              understand the difficulty of Korean texts using linguistic and
-              text-based features.
-            </p>
-            <ul class="tag-list compact">
-              <li>Python</li><li>Streamlit</li><li>NLP</li><li>Korean</li><li>Text Analysis</li>
-            </ul>
-            <div class="card-actions">
-              <a class="button small" href="projects/hanlevel.html">View case study</a>
-              <a class="text-link" href="GITHUB_URL" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-visual data-visual" role="img" aria-label="Abstract data quality chart placeholder">
-              <span></span><span></span><span></span><span></span>
-            </div>
-            <p class="project-category">Data Analysis · NLP · Korean Text Data</p>
-            <h3>NSMC Korean Movie Reviews — Data Quality & Exploratory Analysis</h3>
-            <p>
-              Exploratory and data-quality analysis of 200,000 Korean movie
-              reviews from the NSMC sentiment dataset.
-            </p>
-            <ul class="tag-list compact">
-              <li>Python</li><li>Pandas</li><li>NumPy</li><li>Excel</li><li>SQL</li><li>NLP</li><li>EDA</li>
-            </ul>
-            <div class="card-actions">
-              <a class="button small" href="projects/nsmc.html">View case study</a>
-              <a class="text-link" href="GITHUB_URL" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-visual corpus-visual" role="img" aria-label="Abstract parallel corpus alignment placeholder">
-              <span>KO</span><span>PT</span><span>alignment</span>
-            </div>
-            <p class="project-category">Parallel Corpora · NLP · Translation Technology</p>
-            <h3>HanParal</h3>
-            <p>
-              An open-source project exploring parallel text alignment and
-              multilingual corpus workflows, with a focus on Korean and
-              translation-oriented language data.
-            </p>
-            <ul class="tag-list compact">
-              <li>NLP</li><li>Parallel Corpora</li><li>Translation</li><li>Korean</li><li>Portuguese</li><li>Python</li>
-            </ul>
-            <div class="card-actions">
-              <a class="button small" href="projects/hanparal.html">View case study</a>
-              <a class="text-link" href="GITHUB_URL" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="research" class="section" aria-labelledby="research-title">
-        <div class="section-heading">
-          <p class="eyebrow">Research Interests</p>
-          <h2 id="research-title">Multilingual language data for under-resourced contexts.</h2>
-        </div>
-        <div class="research-grid">
-          <article class="info-card">
-            <h3>Multilingual NLP</h3>
-            <p>
-              I am particularly interested in NLP for multilingual and
-              under-resourced language settings, especially the
-              Korean-Brazilian Portuguese language pair.
-            </p>
-          </article>
-          <article class="info-card">
-            <h3>Parallel Corpora</h3>
-            <p>
-              My research interests include parallel corpus construction,
-              alignment, evaluation and the creation of linguistic resources for
-              machine translation and language models.
-            </p>
-          </article>
-          <article class="info-card concept-card">
-            <p class="badge">Research concept / planned research</p>
-            <h3>KoPT — Research Concept</h3>
-            <p>
-              KoPT is a research concept for the construction and evaluation of
-              a Korean-Brazilian Portuguese parallel corpus for NLP applications
-              in an under-resourced language pair.
-            </p>
-          </article>
-        </div>
-        <ul class="tag-list research-tags">
-          <li>Machine Translation</li>
-          <li>LLM Evaluation</li>
-          <li>Corpus Linguistics</li>
-          <li>Low-resource NLP</li>
-          <li>Korean-Portuguese NLP</li>
-          <li>Language Data</li>
-        </ul>
-      </section>
-
-      <section id="skills" class="section" aria-labelledby="skills-title">
-        <div class="section-heading">
-          <p class="eyebrow">Skills</p>
-          <h2 id="skills-title">A language-aware data toolkit.</h2>
-        </div>
-        <div class="skills-grid">
-          <article class="skill-group">
-            <h3>Data</h3>
-            <ul>
-              <li>Python</li><li>Pandas</li><li>NumPy</li><li>SQL</li><li>Excel</li><li>Exploratory Data Analysis</li><li>Data Cleaning</li><li>Data Quality</li>
-            </ul>
-          </article>
-          <article class="skill-group">
-            <h3>NLP / Language Data</h3>
-            <ul>
-              <li>Natural Language Processing</li><li>Text Analysis</li><li>Corpus Linguistics</li><li>Parallel Corpora</li><li>Data Annotation</li><li>Linguistic Annotation</li><li>AI Response Evaluation</li><li>Multilingual Data</li>
-            </ul>
-          </article>
-          <article class="skill-group">
-            <h3>Languages / Linguistics</h3>
-            <ul>
-              <li>Brazilian Portuguese</li><li>Korean</li><li>English</li><li>Spanish</li><li>Translation</li><li>Linguistics</li>
-            </ul>
-          </article>
-          <article class="skill-group">
-            <h3>Tools</h3>
-            <ul>
-              <li>Git</li><li>GitHub</li><li>VS Code</li><li>Streamlit</li><li>Jupyter</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="education" class="section education-section" aria-labelledby="education-title">
-        <div class="education-header">
-          <div>
-            <p class="eyebrow">Education & Credentials</p>
-            <h2 id="education-title">Education</h2>
-            <p class="education-summary">
-              Academic background, relevant programs, and selected credentials
-              related to language, data, and NLP.
-            </p>
-          </div>
-          <a class="button secondary cv-button" href="CV_URL" target="_blank" rel="noreferrer">View full CV</a>
-        </div>
-
-        <div class="education-window" data-active-tab="01">
-          <div class="education-tabs" role="tablist" aria-label="Education and credentials categories">
-            <button class="education-tab is-active" type="button" role="tab" id="tab-formal" aria-selected="true" aria-controls="panel-formal" data-tab-index="01">Formal Education</button>
-            <button class="education-tab" type="button" role="tab" id="tab-programs" aria-selected="false" aria-controls="panel-programs" data-tab-index="02" tabindex="-1">Programs & Coursework</button>
-            <button class="education-tab" type="button" role="tab" id="tab-certifications" aria-selected="false" aria-controls="panel-certifications" data-tab-index="03" tabindex="-1">Certifications</button>
-            <span class="tab-meta" aria-hidden="true">Selected / 01</span>
-          </div>
-
-          <section class="education-panel formal-education is-active" id="panel-formal" role="tabpanel" tabindex="0" aria-labelledby="tab-formal">
-            <p class="credential-label">Formal Education</p>
-            <h3 id="formal-education-title">Academic Degrees</h3>
-            <div class="academic-record">
-              <article class="academic-entry">
-                <div class="record-marker" aria-hidden="true"></div>
-                <div class="record-main">
-                  <span>Undergraduate</span>
-                  <h4>B.A. in Translation</h4>
-                  <p>Federal University of Paraíba — UFPB</p>
-                </div>
-                <small>[ADD DATES]</small>
-              </article>
-            </div>
-          </section>
-
-          <section class="education-panel programs-block" id="panel-programs" role="tabpanel" tabindex="0" aria-labelledby="tab-programs" hidden>
-            <p class="credential-label">Relevant Programs & Coursework</p>
-            <h3 id="programs-title">Selected academic and technical programs</h3>
-            <div class="program-grid">
-              <article class="program-card featured-program">
-                <span>2026</span>
-                <h4>Global Consumer Intelligence (GCI) World Program</h4>
-                <p>Matsuo-Iwasawa Laboratory · The University of Tokyo</p>
-              </article>
-              <article class="program-card coursework-card">
-                <span>[ADD DATES]</span>
-                <h4>Korea University — K-MOOC Coursework</h4>
-                <ul>
-                  <li>Introduction to Data Analysis</li>
-                  <li>Introductory Linguistics in the AI Era</li>
-                  <li>Literary Data Analysis Practicum</li>
-                </ul>
-              </article>
-              <article class="program-card compact-program">
-                <span class="status-badge">In Progress</span>
-                <h4>IBM Data Analyst Professional Certificate</h4>
-                <p>Professional certificate program focused on data analysis foundations.</p>
-              </article>
-            </div>
-          </section>
-
-          <section class="education-panel certifications-block" id="panel-certifications" role="tabpanel" tabindex="0" aria-labelledby="tab-certifications" hidden>
-            <div class="certifications-heading">
-              <div>
-                <p class="credential-label">Certifications</p>
-                <h3 id="certifications-title">Selected credentials</h3>
-              </div>
-              <a class="text-link" href="CERTIFICATIONS_URL" target="_blank" rel="noreferrer">View all certifications</a>
-            </div>
-            <div class="certification-table" aria-label="Selected certifications">
-              <article>
-                <h4>Databases and SQL for Data Science with Python</h4>
-                <p>IBM</p>
-              </article>
-              <article>
-                <h4>Advanced Excel</h4>
-                <p>Fundação Bradesco</p>
-              </article>
-              <article>
-                <h4>TOPIK</h4>
-                <p>[LEVEL / YEAR]</p>
-              </article>
-            </div>
-          </section>
-        </div>
-      </section>
-
-      <section id="contact" class="section contact" aria-labelledby="contact-title">
-        <p class="eyebrow">Contact</p>
-        <h2 id="contact-title">Let's connect</h2>
-        <p>
-          I'm always interested in conversations about data, NLP, multilingual
-          language technology, research and collaborative projects.
-        </p>
-        <div class="contact-links">
-          <a href="https://github.com/liviaaguiarcc/" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/liviaaguiarcc/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="mailto:livia.aguiarcc@gmail.com">Email</a>
-        </div>
+      <section class="chapter-index reveal" aria-label="Portfolio chapters">
+        <a href="about.html"><span>01</span><strong>About</strong><p>Translation and linguistics as a foundation for language technology.</p></a>
+        <a href="projects.html"><span>02</span><strong>Projects</strong><p>Applied work across data analysis, NLP and software tools.</p></a>
+        <a href="education.html"><span>03</span><strong>Education</strong><p>Academic background, relevant programs and selected credentials.</p></a>
+        <a href="research.html"><span>04</span><strong>Research</strong><p>Multilingual NLP, parallel corpora and Korean-Portuguese language data.</p></a>
       </section>
     </main>
-
-    <footer class="footer">
-      <p>© <span id="year"></span> · Built by Lívia Aguiar · Language × Data × AI</p>
+    <footer class="site-footer">
+      <div><strong>Lívia Aguiar</strong><p>Language × Data × AI</p></div>
+      <nav aria-label="Footer links"><a href="https://github.com/liviaaguiarcc/" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/liviaaguiarcc/" target="_blank" rel="noreferrer">LinkedIn</a></nav>
+      <p>© <span data-year></span></p>
     </footer>
-
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
