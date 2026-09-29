@@ -116,7 +116,7 @@ body[data-page="research"] .page-intro .lede { font-size: clamp(1.05rem, 1.8vw, 
 .action-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem; margin-top: 1.5rem; }
 
 /* Home */
-body[data-page="home"] { min-height: 100dvh; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+body[data-page="home"] { min-height: 100dvh; display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; }
 body[data-page="home"] .site-footer { padding-block: 0.8rem; }
 .home-page { display: grid; align-items: center; width: min(var(--max), calc(100% - 2rem)); min-height: 0; padding: clamp(1rem, 3vh, 2rem) 0 clamp(0.8rem, 2vh, 1.4rem); }
 .home-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr); align-items: center; gap: clamp(1.5rem, 5vw, 4rem); min-height: 0; }
@@ -278,7 +278,7 @@ body[data-page="education"] .archive-tabs { margin-top: 0; }
 .research-interests p { max-width: 900px; color: var(--text-secondary); font-size: 0.98rem; }
 
 /* Contact */
-body[data-page="contact"] { min-height: 100dvh; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+body[data-page="contact"] { min-height: 100dvh; display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; }
 body[data-page="contact"] .editorial-nav { padding-top: 0.55rem; padding-bottom: 0.5rem; }
 body[data-page="contact"] .editorial-nav a { padding-top: 0.42rem; }
 body[data-page="contact"] .site-footer { padding-block: 0.55rem; }
