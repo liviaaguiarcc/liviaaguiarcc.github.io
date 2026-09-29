@@ -74,6 +74,27 @@ tabButtons.forEach((tab, index) => {
   });
 });
 
+const thesisCard = document.querySelector(".thesis-card");
+
+if (thesisCard) {
+  const flipThesisCard = (forceState) => {
+    const isFlipped = typeof forceState === "boolean" ? forceState : !thesisCard.classList.contains("is-flipped");
+    thesisCard.classList.toggle("is-flipped", isFlipped);
+    thesisCard.setAttribute("aria-pressed", String(isFlipped));
+    thesisCard.setAttribute("aria-label", isFlipped ? "Flip thesis card back to summary" : "Flip thesis card to read abstract");
+    thesisCard.querySelector(".thesis-front")?.setAttribute("aria-hidden", String(isFlipped));
+    thesisCard.querySelector(".thesis-back")?.setAttribute("aria-hidden", String(!isFlipped));
+  };
+
+  thesisCard.addEventListener("click", () => flipThesisCard());
+  thesisCard.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      flipThesisCard(false);
+    }
+  });
+}
+
 document.addEventListener("click", (event) => {
   const link = event.target.closest("a[href]");
   if (!link || reduceMotion || !document.startViewTransition) return;
