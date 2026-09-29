@@ -211,6 +211,13 @@ body[data-page="education"] .archive-tabs { margin-top: 0; }
 .credential-rows { margin-top: 1.5rem; border-top: 1px solid var(--border); }
 .credential-rows article { display: grid; grid-template-columns: 1fr minmax(160px, .35fr); gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); }
 .credential-rows p { text-align: right; }
+.credential-group { padding: 1.15rem 0 0.45rem; border-bottom: 1px solid var(--border); }
+.credential-group > h3 { margin-bottom: 0.35rem; color: var(--accent); font-size: 0.82rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+.credential-group article:last-child { border-bottom: 0; }
+.credential-group h4 { font-size: 1rem; color: var(--navy); }
+.nested-certificates { margin-top: 0.75rem; padding: 0.8rem 0 0 1rem; border-left: 1px solid var(--border); }
+.nested-certificates p { margin-bottom: 0.35rem; text-align: left; font-size: 0.84rem; }
+.nested-certificates ul { display: grid; gap: 0.25rem; color: var(--text-secondary); font-size: 0.84rem; }
 
 /* Research */
 .research-paper { background: linear-gradient(145deg, rgba(248,244,246,.84), rgba(202,186,200,.22)); }
