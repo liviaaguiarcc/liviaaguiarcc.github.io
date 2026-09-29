@@ -176,14 +176,25 @@ body[data-page="projects"] .project-archive { margin-top: 0; }
 .project-card:hover { transform: translateY(-3px); border-color: rgba(46,59,98,.38); }
 .project-card.is-hidden { display: none; }
 .project-card .index { color: var(--accent); font-weight: 900; }
+.project-status { color: var(--mauve-grey); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
 .project-card h2 { font-size: clamp(1.8rem, 4vw, 3.2rem); }
-.project-dossier { width: min(980px, calc(100% - 2rem)); max-height: min(86vh, 900px); padding: 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text-primary); box-shadow: var(--shadow); }
+.project-dossier { width: min(1040px, calc(100% - 2rem)); max-height: min(88vh, 940px); padding: 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text-primary); box-shadow: var(--shadow); }
 .project-dossier::backdrop { background: rgba(46,59,98,.28); backdrop-filter: blur(4px); }
 .dossier-close { position: sticky; top: 0; float: right; z-index: 2; width: 2.6rem; height: 2.6rem; margin: 1rem; border: 1px solid var(--border); border-radius: 50%; background: var(--surface); font-size: 1.4rem; cursor: pointer; }
 .dossier-body { padding: clamp(1.5rem, 4vw, 3rem); }
-.dossier-body header { display: grid; gap: 1rem; margin-bottom: 2rem; }
-.dossier-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-.dossier-section { padding: 1rem 0; border-top: 1px solid var(--border); }
+.case-study { display: grid; gap: clamp(1.6rem, 3vw, 2.4rem); max-width: 75ch; margin: 0 auto; }
+.case-header { display: grid; gap: 0.95rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.case-header h1 { font-size: clamp(2.6rem, 5vw, 4rem); line-height: 1; }
+.case-subtitle { color: var(--navy); font-weight: 900; }
+.case-section { padding-top: 0.25rem; }
+.case-label { margin-bottom: 0.6rem; color: var(--accent); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.1em; text-align: left; text-transform: uppercase; }
+.case-content { display: grid; gap: 0.85rem; color: var(--text-secondary); font-size: 1rem; line-height: 1.75; }
+.case-content ul { padding-left: 1.15rem; }
+.case-content small, .subtle-note { color: var(--mauve-grey); font-size: 0.88rem; }
+.case-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; margin: 0.2rem 0; }
+.case-metrics article { padding: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(239,233,236,.45); }
+.case-metrics strong { display: block; color: var(--navy); font-size: 1.45rem; line-height: 1; }
+.case-metrics span { display: block; margin-top: 0.35rem; color: var(--text-secondary); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; }
 .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1rem; }
 .metric-grid article { padding: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); }
 .metric-grid strong { display: block; font-size: 1.4rem; color: var(--navy); }
@@ -286,7 +297,7 @@ body[data-page="contact"] .site-footer { padding-block: 0.55rem; }
 /* Responsive */
 @media (max-width: 900px) {
   .editorial-nav { grid-template-columns: repeat(3, 1fr); }
-  .home-hero, .contact-card, .split, .education-top, .project-layout, .program-grid, .dossier-grid, .about-editorial, .about-interest-grid, .grouped-credentials { grid-template-columns: 1fr; }
+  .home-hero, .contact-card, .split, .education-top, .project-layout, .program-grid, .about-editorial, .about-interest-grid, .grouped-credentials { grid-template-columns: 1fr; }
   .project-card, .project-card.featured { grid-column: span 1; }
   .identity-map { min-height: 300px; }
   .site-footer { grid-template-columns: 1fr; }
@@ -314,6 +325,7 @@ body[data-page="contact"] .site-footer { padding-block: 0.55rem; }
   body[data-page="home"] { display: block; }
   .about-statement { font-size: clamp(2rem, 11vw, 3rem); }
   .current-interests .tag-list { grid-template-columns: 1fr; }
+  .case-metrics { grid-template-columns: 1fr; }
   .home-page { display: block; padding-block: 2.2rem; }
   .home-hero { gap: 1.5rem; }
   .identity-map { min-height: 360px; margin-top: 1.5rem; }

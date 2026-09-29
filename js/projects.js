@@ -5,61 +5,62 @@ const dossierContent = document.querySelector("[data-dossier-content]");
 const dossierClose = document.querySelector(".dossier-close");
 let lastFocusedProject = null;
 
+const list = (items) => `<ul>${items.map((item) => `<li>${item}</li>`).join("")}</ul>`;
+const paragraphs = (items) => items.map((item) => `<p>${item}</p>`).join("");
+const metrics = (items) => `<div class="case-metrics">${items.map(([value, label]) => `<article><strong>${value}</strong><span>${label}</span></article>`).join("")}</div>`;
+
 const projectDetails = {
   hanlevel: {
     title: "HanLevel",
-    category: "NLP · Korean Language Technology · Educational Technology",
-    summary: "A Korean reading-level analysis tool designed to help learners understand the difficulty of Korean texts using linguistic and text-based features.",
-    tags: ["Python", "Streamlit", "NLP", "Korean", "Text Analysis"],
+    category: "Korean NLP · Educational Technology · Readability",
+    summary: "An interpretable Korean readability profiler designed to help learners and educators evaluate whether a Korean text is appropriate for a learner’s level and understand which linguistic features influence its difficulty.",
+    tags: ["Python", "Streamlit", "Korean NLP", "Kiwi", "Readability"],
     sections: [
-      ["Overview", "HanLevel analyzes Korean texts and presents reading-difficulty information for learners."],
-      ["Problem", "Learners often encounter Korean texts without a clear indication of how difficult the material is for their current level."],
-      ["Goal", "Build an accessible tool that converts linguistic and textual characteristics into useful information for Korean learners."],
-      ["Approach", "[ADD EXACT HANLEVEL APPROACH DETAIL]"],
-      ["Features", "[ADD VERIFIED HANLEVEL FEATURE DETAIL]"],
-      ["Tech Stack", "Python · Streamlit · NLP/Text Processing"],
-      ["Challenges", "[ADD VERIFIED HANLEVEL CHALLENGE DETAIL]"],
-      ["What I Learned", "[ADD VERIFIED HANLEVEL LEARNING DETAIL]"]
+      { label: "01", title: "The Problem", content: paragraphs(["Choosing appropriate Korean reading material can be difficult for both independent learners and teachers. A text may appear short or familiar while still containing advanced vocabulary, dense grammatical structures or long sentences. HanLevel was built to answer two practical questions: Is this text appropriate for the learner’s level? And what exactly is making it easy or difficult?"]) },
+      { label: "02", title: "How It Works", content: paragraphs(["Users paste Korean text directly into the application.", "HanLevel returns:"]) + list(["estimated difficulty: Beginner, Intermediate or Advanced", "HanLevel score from 0–100", "vocabulary difficulty", "grammar and morphological complexity", "sentence-length complexity", "dictionary coverage", "vocabulary-level distribution", "potentially challenging vocabulary", "detected structural markers", "average eojeol per sentence", "an explanation of the factors influencing the final result"]) },
+      { label: "", title: "Scoring", content: metrics([["45%", "Vocabulary difficulty"], ["35%", "Grammar & morphology"], ["20%", "Sentence length"]]) + paragraphs(["Classification thresholds: <25 — Beginner; 25–<50 — Intermediate; ≥50 — Advanced", "<small>These thresholds are project-specific and provisional. They are not official TOPIK or CEFR boundaries.</small>"]) },
+      { label: "03", title: "NLP Approach", content: paragraphs(["Vocabulary uses learner-level lexical information derived from the Korean Learners’ Dictionary (한국어기초사전).", "Vocabulary levels: 초급 → 0; 중급 → 50; 고급 → 100. Unknown/unclassified vocabulary is left unclassified rather than automatically treated as easy or difficult.", "Grammar uses Kiwi / kiwipiepy for Korean morphological analysis.", "Structural signals include:"]) + list(["connective endings", "adnominal endings", "nominalizing endings", "auxiliary verbs", "quotation particles", "prefinal endings", "morphological density"]) + paragraphs(["Sentence complexity uses average eojeol per sentence as an additional structural-complexity signal."]) },
+      { label: "04", title: "Data & Deployment", content: metrics([["~969 MB", "Original KRDICT export across 11 JSON files"], ["~1.79 MB", "Deployed lexical index"]]) + paragraphs(["HanLevel uses a compact local lexical index derived from the Korean Learners’ Dictionary instead of a live API. This improves deployment stability, speed and reproducibility."]) },
+      { label: "05", title: "Internal Calibration", content: metrics([["5", "Beginner texts"], ["5", "Intermediate texts"], ["5", "Advanced texts"], ["15 / 15", "Internal calibration agreement"]]) + paragraphs(["This is internal calibration agreement, not an external evaluation result. The calibration set is small and internally constructed."]) },
+      { label: "06", title: "Tech Stack", content: list(["Python", "Streamlit", "Kiwi / kiwipiepy", "KRDICT-derived lexical index", "GitHub", "Streamlit Community Cloud"]) },
+      { label: "07", title: "Limitations", content: list(["small internal calibration set", "provisional thresholds", "some vocabulary remains unclassified", "homonyms are not fully context-disambiguated", "grammar score uses structural indicators rather than full pedagogical grammar analysis", "very short texts provide less evidence", "sentence length represents only one aspect of syntactic complexity"]) },
+      { label: "08", title: "Future Direction", content: paragraphs(["HanLevel v1.0 may explore:"]) + list(["level-aware text adaptation", "Korean text simplification", "learner-friendly explanations", "vocabulary support", "comprehension questions", "reading recommendations", "broader evaluation"]) }
     ],
-    links: [["Live Demo", "HANLEVEL_DEMO_URL"], ["GitHub", "HANLEVEL_GITHUB_URL"], ["Devpost", "HANLEVEL_DEVPOST_URL"]]
+    links: [["Live App", "https://hanlevel.streamlit.app/"], ["GitHub", "https://github.com/liviaaguiarcc/HanLevel"], ["Devpost", "https://devpost.com/software/hanlevel"], ["Video Demo", "https://youtu.be/wGAb7SvXj-o?si=O36g_ZAJPjPJTn9N"]]
   },
   nsmc: {
-    title: "NSMC Korean Movie Reviews — Data Quality & Exploratory Analysis",
-    category: "Data Analysis · NLP · Korean Text Data",
-    summary: "Exploratory and data-quality analysis of 200,000 Korean movie reviews from the NSMC sentiment dataset.",
-    tags: ["Python", "Pandas", "NumPy", "Excel", "SQL", "NLP", "EDA"],
+    title: "NSMC Korean Movie Reviews",
+    subtitle: "Data Quality & Exploratory Analysis",
+    category: "Data & Analytics · Korean NLP",
+    summary: "An ongoing personal data and NLP project exploring the structure, quality and linguistic characteristics of the NSMC Korean sentiment dataset through data cleaning, exploratory analysis, feature engineering and small-scale manual annotation.",
+    tags: ["Python", "Pandas", "Excel", "Korean NLP", "EDA"],
     sections: [
-      ["Overview", "This project examines Korean movie review text data with a focus on quality, exploratory analysis and language-aware features."],
-      ["Dataset", "200,000 Korean movie reviews with columns id, document and label. Sentiment labels are approximately balanced 50/50."],
-      ["Questions", "What quality issues exist? How are text lengths distributed? Which simple linguistic features can support later NLP analysis?"],
-      ["Data Quality", "8 empty or whitespace-only texts; 5,449 duplicate rows; 1,590 distinct duplicated texts; 1,369 duplicated texts with consistent labels; 221 duplicated texts with conflicting labels."],
-      ["Cleaning", "A stratified 10,000-review sample was created with 5,000 positive and 5,000 negative reviews. In the sample: 166 duplicate rows, 0 empty texts and only 3 texts changed by normalization."],
-      ["Exploratory Analysis", "Text length minimum: 1; maximum: 142; mean: approximately 35.22; median: 27. Length distribution: 1-10: 1,051; 11-20: 2,638; 21-40: 3,496; 41-80: 1,874; 81+: 941."],
-      ["Linguistic Features", "Created features: text length, eojeol count, laughter marker and crying marker. Laughter yes: 805; no: 9,195. Crying yes: 335; no: 9,665."],
-      ["Manual Annotation", "Exploratory annotation of 50 texts: affective/emotional: 2; descriptive/analytical: 8; direct: 21; humor/irony: 4; indeterminate: 2; intensified: 13. This small sample should not be used for broad statistical conclusions."],
-      ["Key Findings", "The data contains empty texts, duplicates and conflicting labels. Reviews are generally short. Simple expressive markers and eojeol counts can support later NLP analysis."],
-      ["Limitations", "The manual annotation sample is small and exploratory. Future modeling should carefully handle duplicates and conflicting labels."],
-      ["Next Steps", "Add visualizations, expand annotation guidelines and use cleaned data for baseline NLP experiments."]
+      { label: "01", title: "Dataset", content: paragraphs(["200,000 Korean movie reviews", "Columns: id · document · label", "Sentiment distribution: approximately 50 / 50 positive and negative"]) },
+      { label: "02", title: "Data Quality", content: metrics([["8", "Empty / whitespace texts"], ["5,449", "Duplicate rows"], ["1,590", "Distinct duplicated texts"], ["221", "Conflicting labels"]]) + paragraphs(["1,369 duplicated texts have consistent labels."]) },
+      { label: "03", title: "Text Exploration", content: paragraphs(["Text length: minimum 1; maximum 142; mean ≈ 35.22; median 27", "For the 10,000-review stratified sample: 5,000 positive and 5,000 negative", "Length distribution: 1–10: 1,051; 11–20: 2,638; 21–40: 3,496; 41–80: 1,874; 81+: 941"]) },
+      { label: "04", title: "Sample & Normalization", content: paragraphs(["10,000-review stratified sample", "166 duplicate rows", "0 empty texts", "Normalization changed only 3 texts"]) },
+      { label: "05", title: "Language-Aware Features", content: paragraphs(["Created features:"]) + list(["text length", "eojeol count", "laughter marker", "crying marker"]) + metrics([["805", "Laughter yes"], ["9,195", "Laughter no"], ["335", "Crying yes"], ["9,665", "Crying no"]]) },
+      { label: "06", title: "Exploratory Manual Annotation", content: paragraphs(["50 texts manually annotated.", "Categories: Affective / emotional — 2; Descriptive / analytical — 8; Direct — 21; Humor / irony — 4; Indeterminate — 2; Intensified — 13", "The annotation sample is intentionally small and exploratory and should not be used for broad statistical inference."]) },
+      { label: "07", title: "Status", content: paragraphs(["This project is still in progress.", "Analysis in progress — additional exploration and documentation will be added as the project develops."]) }
     ],
-    links: [["Repository", "NSMC_REPOSITORY_URL"]]
+    links: []
   },
   hanparal: {
     title: "HanParal",
-    category: "Parallel Corpora · NLP · Translation Technology",
-    summary: "An open-source project exploring parallel text alignment and multilingual corpus workflows, with a focus on Korean and translation-oriented language data.",
-    tags: ["NLP", "Parallel Corpora", "Translation", "Korean", "Portuguese", "Python"],
+    category: "Corpus Linguistics · NLP · Translation Technology",
+    summary: "A multilingual corpus and concordance tool created to support corpus preparation, alignment, annotation, analysis and visualization within a single workflow, with an initial focus on Korean–Portuguese parallel data.",
+    tags: ["Python", "Parallel Corpora", "Corpus Linguistics", "Alignment", "Annotation"],
     sections: [
-      ["Overview", "HanParal explores workflows for parallel text alignment and multilingual corpus development."],
-      ["Motivation", "Parallel corpora are important resources for translation technology, multilingual NLP and language model evaluation."],
-      ["Problem", "[ADD VERIFIED HANPARAL DETAIL]"],
-      ["Approach", "[ADD VERIFIED HANPARAL DETAIL]"],
-      ["Corpus/Data Workflow", "[ADD VERIFIED HANPARAL DETAIL]"],
-      ["Architecture", "[ADD VERIFIED HANPARAL DETAIL]"],
-      ["Challenges", "[ADD VERIFIED HANPARAL DETAIL]"],
-      ["What I Learned", "[ADD VERIFIED HANPARAL DETAIL]"],
-      ["Future Development", "[ADD VERIFIED HANPARAL DETAIL]"]
+      { label: "01", title: "Motivation", content: paragraphs(["HanParal was created to make multilingual corpus work easier within the author’s undergraduate research workflow.", "The goal was to bring tasks such as corpus organization, alignment, annotation, searching, cleaning, analysis and visualization into a more unified tool rather than relying entirely on disconnected manual workflows."]) },
+      { label: "02", title: "Input & Workflow", content: paragraphs(["Supported input: TXT; CSV", "The intended workflow covers:"]) + list(["corpus input", "cleaning / preparation", "parallel-text alignment", "concordance/search", "annotation", "analysis", "summary", "visualization"]) },
+      { label: "03", title: "Language Scope", content: paragraphs(["HanParal was developed primarily around Korean–Portuguese research but is intended to support other language pairs as well."]) },
+      { label: "04", title: "Research Use", content: paragraphs(["HanParal was used as the main software tool supporting the author’s 2026 undergraduate thesis.", "It supported work involving searching, aligning, annotating and summarizing comparative corpus data."]) },
+      { label: "05", title: "Tech Stack", content: list(["Python"]) },
+      { label: "06", title: "Current Status", content: paragraphs(["MVP complete.", "The current version is primarily used by the author.", "Expansion is still in progress, particularly around:"]) + list(["improving automated alignment", "making the tool usable by other researchers/users", "creating a dedicated UI/UX", "packaging HanParal as downloadable local software / executable"]) },
+      { label: "07", title: "Challenge", content: paragraphs(["One of the main technical challenges is expanding alignment toward a more automated workflow while making the software robust and understandable for users beyond its original author."]) },
+      { label: "08", title: "Future Development", content: paragraphs(["Planned direction:"]) + list(["improved automated alignment", "dedicated user interface", "improved user experience", "broader usability", "downloadable/local executable version"]) + paragraphs(["<span class=\"subtle-note\">Repository update coming soon</span>"]) }
     ],
-    links: [["Repository", "HANPARAL_GITHUB_URL"]]
+    links: []
   }
 };
 
@@ -75,7 +76,8 @@ filterButtons.forEach((button) => {
 });
 
 const renderDossier = (project) => {
-  dossierContent.innerHTML = `<header><p class="eyebrow">${project.category}</p><h1 id="dossier-title">${project.title}</h1><p class="lede">${project.summary}</p><ul class="tag-list compact">${project.tags.map((tag) => `<li>${tag}</li>`).join("")}</ul></header><div class="dossier-grid">${project.sections.map(([title, content]) => `<section class="dossier-section"><h2>${title}</h2><p>${content}</p></section>`).join("")}</div><section class="dossier-section"><h2>Links</h2><div class="action-row">${project.links.map(([label, href]) => `<a class="button ghost" href="${href}" target="_blank" rel="noreferrer">${label}</a>`).join("")}</div></section>`;
+  const links = project.links.length ? `<section class="case-section"><p class="case-label">Links</p><div class="action-row">${project.links.map(([label, href]) => `<a class="button ghost" href="${href}" target="_blank" rel="noreferrer">${label}</a>`).join("")}</div></section>` : "";
+  dossierContent.innerHTML = `<article class="case-study"><header class="case-header"><p class="eyebrow">${project.category}</p><h1 id="dossier-title">${project.title}</h1>${project.subtitle ? `<p class="case-subtitle">${project.subtitle}</p>` : ""}<p class="lede">${project.summary}</p><ul class="tag-list compact">${project.tags.map((tag) => `<li>${tag}</li>`).join("")}</ul></header>${project.sections.map((section) => `<section class="case-section">${section.label ? `<p class="case-label">${section.label} — ${section.title}</p>` : `<p class="case-label">${section.title}</p>`}<div class="case-content">${section.content}</div></section>`).join("")}${links}</article>`;
 };
 
 projectCards.forEach((card) => {
