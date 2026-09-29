@@ -200,13 +200,15 @@ body[data-page="home"] .site-footer { padding-block: 0.8rem; }
 
 /* Contact */
 body[data-page="contact"] { min-height: 100dvh; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
-body[data-page="contact"] .site-footer { padding-block: 0.8rem; }
-.contact-page { display: grid; place-items: center; min-height: 0; padding-block: clamp(1rem, 4vh, 2.5rem); }
-.contact-card { width: min(820px, 100%); margin-top: 0; padding-block: clamp(1.35rem, 4vh, 2.4rem); }
-.contact-card h1 { font-size: clamp(3.6rem, min(9vw, 13vh), 7rem); }
-.contact-card .lede { font-size: clamp(1.05rem, min(2vw, 2.7vh), 1.45rem); }
-.address-book { display: grid; gap: 0.35rem; margin-top: clamp(1rem, 3vh, 1.7rem); }
-.address-book a { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; padding: 0.72rem 0; border-bottom: 1px solid var(--border); }
+body[data-page="contact"] .editorial-nav { padding-top: 0.55rem; padding-bottom: 0.5rem; }
+body[data-page="contact"] .editorial-nav a { padding-top: 0.42rem; }
+body[data-page="contact"] .site-footer { padding-block: 0.55rem; }
+.contact-page { display: grid; place-items: center; min-height: 0; padding-block: clamp(0.4rem, 2vh, 1.2rem); }
+.contact-card { width: min(760px, 100%); margin-top: 0; padding: clamp(1rem, 2.7vh, 1.55rem) clamp(1.2rem, 3vw, 2.2rem); }
+.contact-card h1 { font-size: clamp(3rem, min(7vw, 10vh), 5.8rem); }
+.contact-card .lede { font-size: clamp(1rem, min(1.6vw, 2.3vh), 1.28rem); }
+.address-book { display: grid; gap: 0.2rem; margin-top: clamp(0.75rem, 2vh, 1.15rem); }
+.address-book a { display: grid; grid-template-columns: 7rem 1fr; gap: 0.8rem; padding: 0.56rem 0; border-bottom: 1px solid var(--border); }
 .address-book span { color: var(--accent); font-weight: 900; text-transform: uppercase; font-size: 0.78rem; }
 
 /* Footer */
