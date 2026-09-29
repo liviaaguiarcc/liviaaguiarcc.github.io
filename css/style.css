@@ -149,7 +149,7 @@ body[data-page="about"] .page-intro h1 { font-size: clamp(3rem, 7vw, 5rem); }
 .about-block { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--border); border-radius: var(--radius); background: rgba(248,244,246,.62); }
 .about-story-block { display: grid; align-content: start; }
 .about-statement-block { display: grid; place-items: center; min-height: 100%; background: linear-gradient(135deg, rgba(248,244,246,.72), rgba(203,173,181,.16)); }
-.about-statement { max-width: 430px; color: var(--navy); font-family: Caveat, "DM Serif Display", cursive; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.05; letter-spacing: 0.005em; }
+.about-statement { max-width: 500px; color: var(--navy); font-family: Kalam, "DM Serif Display", cursive; font-size: clamp(2.4rem, 4.8vw, 4.35rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.03em; }
 .about-narrative { display: grid; gap: 0.9rem; max-width: 820px; }
 .about-narrative p { font-size: 1.02rem; }
 .alias-note { margin-top: 0.4rem; padding-top: 0.8rem; border-top: 1px solid var(--border); color: var(--mauve-grey); font-size: 0.9rem !important; }
@@ -159,6 +159,8 @@ body[data-page="about"] .interest-panel h2 { font-size: clamp(2rem, 4.5vw, 3.4re
 .about-interests-block { margin-top: 1rem; }
 .about-interest-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(1rem, 3vw, 2rem); }
 .about-interest-grid h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+.current-interests .tag-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; }
+.current-interests .tag-list li { display: grid; place-items: center; min-height: 2.7rem; text-align: center; }
 .future-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem; margin-top: 1rem; }
 .future-group h3 { color: var(--mauve-grey); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
 .future-tags li { background: transparent; border-style: dashed; color: var(--lavender-grey); }
