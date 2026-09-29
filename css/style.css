@@ -182,19 +182,22 @@ body[data-page="projects"] .project-archive { margin-top: 0; }
 .project-dossier::backdrop { background: rgba(46,59,98,.28); backdrop-filter: blur(4px); }
 .dossier-close { position: sticky; top: 0; float: right; z-index: 2; width: 2.6rem; height: 2.6rem; margin: 1rem; border: 1px solid var(--border); border-radius: 50%; background: var(--surface); font-size: 1.4rem; cursor: pointer; }
 .dossier-body { padding: clamp(1.5rem, 4vw, 3rem); }
-.case-study { display: grid; gap: clamp(1.6rem, 3vw, 2.4rem); max-width: 75ch; margin: 0 auto; }
-.case-header { display: grid; gap: 0.95rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-.case-header h1 { font-size: clamp(2.6rem, 5vw, 4rem); line-height: 1; }
-.case-subtitle { color: var(--navy); font-weight: 900; }
-.case-section { padding-top: 0.25rem; }
-.case-label { margin-bottom: 0.6rem; color: var(--accent); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.1em; text-align: left; text-transform: uppercase; }
-.case-content { display: grid; gap: 0.85rem; color: var(--text-secondary); font-size: 1rem; line-height: 1.75; }
-.case-content ul { padding-left: 1.15rem; }
+.case-study { display: grid; gap: clamp(1.4rem, 2.4vw, 1.8rem); max-width: 72ch; margin: 0 auto; }
+.case-header { display: grid; gap: 0.65rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+.case-header h1 { font-size: clamp(1.9rem, 3vw, 2.7rem); line-height: 1.08; }
+.case-header .lede { max-width: 68ch; font-size: clamp(0.98rem, 1.3vw, 1.12rem); line-height: 1.65; color: var(--text-secondary); }
+.case-meta { color: var(--mauve-grey); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.08em; text-align: left; text-transform: uppercase; }
+.case-subtitle { color: var(--navy); font-size: clamp(0.95rem, 1.3vw, 1.05rem); font-weight: 900; line-height: 1.4; }
+.case-section { padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.case-section h2 { margin-bottom: 0.55rem; color: var(--navy); font-size: clamp(1.25rem, 2vw, 1.55rem); line-height: 1.15; }
+.case-label { margin-bottom: 0.3rem; color: var(--accent); font-size: 0.74rem; font-weight: 900; letter-spacing: 0.1em; text-align: left; text-transform: uppercase; }
+.case-content { display: grid; gap: 0.65rem; color: var(--text-secondary); font-size: clamp(0.95rem, 1.15vw, 1rem); line-height: 1.65; }
+.case-content ul { display: grid; gap: 0.25rem; padding-left: 1.15rem; line-height: 1.6; }
 .case-content small, .subtle-note { color: var(--mauve-grey); font-size: 0.88rem; }
-.case-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; margin: 0.2rem 0; }
-.case-metrics article { padding: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(239,233,236,.45); }
-.case-metrics strong { display: block; color: var(--navy); font-size: 1.45rem; line-height: 1; }
-.case-metrics span { display: block; margin-top: 0.35rem; color: var(--text-secondary); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; }
+.case-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; margin: 0.15rem 0; }
+.case-metrics article { padding: 0.7rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: rgba(239,233,236,.45); }
+.case-metrics strong { display: block; color: var(--navy); font-size: clamp(1.2rem, 1.8vw, 1.35rem); line-height: 1; }
+.case-metrics span { display: block; margin-top: 0.3rem; color: var(--text-secondary); font-size: 0.72rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; }
 .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1rem; }
 .metric-grid article { padding: 0.85rem; border: 1px solid var(--border); border-radius: var(--radius-sm); }
 .metric-grid strong { display: block; font-size: 1.4rem; color: var(--navy); }
@@ -325,6 +328,7 @@ body[data-page="contact"] .site-footer { padding-block: 0.55rem; }
   body[data-page="home"] { display: block; }
   .about-statement { font-size: clamp(2rem, 11vw, 3rem); }
   .current-interests .tag-list { grid-template-columns: 1fr; }
+  .case-header h1 { font-size: clamp(1.8rem, 10vw, 2.2rem); }
   .case-metrics { grid-template-columns: 1fr; }
   .home-page { display: block; padding-block: 2.2rem; }
   .home-hero { gap: 1.5rem; }

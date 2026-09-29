@@ -13,6 +13,7 @@ const projectDetails = {
   hanlevel: {
     title: "HanLevel",
     category: "Korean NLP · Educational Technology · Readability",
+    status: "Completed · Sep 2026",
     summary: "An interpretable Korean readability profiler designed to help learners and educators evaluate whether a Korean text is appropriate for a learner’s level and understand which linguistic features influence its difficulty.",
     tags: ["Python", "Streamlit", "Korean NLP", "Kiwi", "Readability"],
     sections: [
@@ -32,6 +33,7 @@ const projectDetails = {
     title: "NSMC Korean Movie Reviews",
     subtitle: "Data Quality & Exploratory Analysis",
     category: "Data & Analytics · Korean NLP",
+    status: "In Progress · 2026",
     summary: "An ongoing personal data and NLP project exploring the structure, quality and linguistic characteristics of the NSMC Korean sentiment dataset through data cleaning, exploratory analysis, feature engineering and small-scale manual annotation.",
     tags: ["Python", "Pandas", "Excel", "Korean NLP", "EDA"],
     sections: [
@@ -41,13 +43,14 @@ const projectDetails = {
       { label: "04", title: "Sample & Normalization", content: paragraphs(["10,000-review stratified sample", "166 duplicate rows", "0 empty texts", "Normalization changed only 3 texts"]) },
       { label: "05", title: "Language-Aware Features", content: paragraphs(["Created features:"]) + list(["text length", "eojeol count", "laughter marker", "crying marker"]) + metrics([["805", "Laughter yes"], ["9,195", "Laughter no"], ["335", "Crying yes"], ["9,665", "Crying no"]]) },
       { label: "06", title: "Exploratory Manual Annotation", content: paragraphs(["50 texts manually annotated.", "Categories: Affective / emotional — 2; Descriptive / analytical — 8; Direct — 21; Humor / irony — 4; Indeterminate — 2; Intensified — 13", "The annotation sample is intentionally small and exploratory and should not be used for broad statistical inference."]) },
-      { label: "07", title: "Status", content: paragraphs(["This project is still in progress.", "Analysis in progress — additional exploration and documentation will be added as the project develops."]) }
+      { label: "", title: "Current Status", content: `<p><strong>In progress</strong></p>` + paragraphs(["Analysis and documentation are still being developed. Additional findings and project materials will be added as the project evolves."]) }
     ],
     links: []
   },
   hanparal: {
     title: "HanParal",
     category: "Corpus Linguistics · NLP · Translation Technology",
+    status: "MVP Complete · Expanding · 2026",
     summary: "A multilingual corpus and concordance tool created to support corpus preparation, alignment, annotation, analysis and visualization within a single workflow, with an initial focus on Korean–Portuguese parallel data.",
     tags: ["Python", "Parallel Corpora", "Corpus Linguistics", "Alignment", "Annotation"],
     sections: [
@@ -56,9 +59,10 @@ const projectDetails = {
       { label: "03", title: "Language Scope", content: paragraphs(["HanParal was developed primarily around Korean–Portuguese research but is intended to support other language pairs as well."]) },
       { label: "04", title: "Research Use", content: paragraphs(["HanParal was used as the main software tool supporting the author’s 2026 undergraduate thesis.", "It supported work involving searching, aligning, annotating and summarizing comparative corpus data."]) },
       { label: "05", title: "Tech Stack", content: list(["Python"]) },
-      { label: "06", title: "Current Status", content: paragraphs(["MVP complete.", "The current version is primarily used by the author.", "Expansion is still in progress, particularly around:"]) + list(["improving automated alignment", "making the tool usable by other researchers/users", "creating a dedicated UI/UX", "packaging HanParal as downloadable local software / executable"]) },
+      { label: "06", title: "Current Version", content: paragraphs(["MVP complete.", "The current version is primarily used by the author."]) },
       { label: "07", title: "Challenge", content: paragraphs(["One of the main technical challenges is expanding alignment toward a more automated workflow while making the software robust and understandable for users beyond its original author."]) },
-      { label: "08", title: "Future Development", content: paragraphs(["Planned direction:"]) + list(["improved automated alignment", "dedicated user interface", "improved user experience", "broader usability", "downloadable/local executable version"]) + paragraphs(["<span class=\"subtle-note\">Repository update coming soon</span>"]) }
+      { label: "08", title: "Future Development", content: paragraphs(["Expansion is still in progress, particularly around:"]) + list(["improved automated alignment", "making the tool usable by other researchers/users", "dedicated user interface", "improved user experience", "broader usability", "downloadable/local executable version"]) },
+      { label: "", title: "Current Status", content: `<p><strong>MVP complete · Expansion in progress</strong></p>` + paragraphs(["<span class=\"subtle-note\">Repository update coming soon.</span>"]) }
     ],
     links: []
   }
@@ -76,8 +80,8 @@ filterButtons.forEach((button) => {
 });
 
 const renderDossier = (project) => {
-  const links = project.links.length ? `<section class="case-section"><p class="case-label">Links</p><div class="action-row">${project.links.map(([label, href]) => `<a class="button ghost" href="${href}" target="_blank" rel="noreferrer">${label}</a>`).join("")}</div></section>` : "";
-  dossierContent.innerHTML = `<article class="case-study"><header class="case-header"><p class="eyebrow">${project.category}</p><h1 id="dossier-title">${project.title}</h1>${project.subtitle ? `<p class="case-subtitle">${project.subtitle}</p>` : ""}<p class="lede">${project.summary}</p><ul class="tag-list compact">${project.tags.map((tag) => `<li>${tag}</li>`).join("")}</ul></header>${project.sections.map((section) => `<section class="case-section">${section.label ? `<p class="case-label">${section.label} — ${section.title}</p>` : `<p class="case-label">${section.title}</p>`}<div class="case-content">${section.content}</div></section>`).join("")}${links}</article>`;
+  const links = project.links.length ? `<section class="case-section"><p class="case-label">Project Links</p><div class="action-row">${project.links.map(([label, href]) => `<a class="button ghost" href="${href}" target="_blank" rel="noreferrer">${label}</a>`).join("")}</div></section>` : "";
+  dossierContent.innerHTML = `<article class="case-study"><header class="case-header"><p class="eyebrow">${project.category}</p><p class="case-meta">${project.status}</p><h1 id="dossier-title">${project.title}</h1>${project.subtitle ? `<p class="case-subtitle">${project.subtitle}</p>` : ""}<p class="lede">${project.summary}</p><ul class="tag-list compact">${project.tags.map((tag) => `<li>${tag}</li>`).join("")}</ul></header>${project.sections.map((section) => `<section class="case-section"><p class="case-label">${section.label ? `${section.label} — ` : ""}${section.title}</p><h2>${section.title}</h2><div class="case-content">${section.content}</div></section>`).join("")}${links}</article>`;
 };
 
 projectCards.forEach((card) => {
