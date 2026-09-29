@@ -184,7 +184,8 @@ body[data-page="projects"] .project-archive { margin-top: 0; }
 .project-card:hover { transform: translateY(-3px); border-color: rgba(46,59,98,.38); }
 .project-card.is-hidden { display: none; }
 .project-card .index { color: var(--accent); font-weight: 900; }
-.project-status { color: var(--mauve-grey); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
+.project-meta, .case-meta-group { display: flex; flex-wrap: wrap; gap: 0.35rem 0.85rem; align-items: center; }
+.project-status, .project-context { color: var(--mauve-grey); font-size: 0.76rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; }
 .project-card h2 { font-size: clamp(1.8rem, 4vw, 3.2rem); }
 .project-dossier { width: min(1040px, calc(100% - 2rem)); max-height: min(88vh, 940px); padding: 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text-primary); box-shadow: var(--shadow); }
 .project-dossier::backdrop { background: rgba(46,59,98,.28); backdrop-filter: blur(4px); }
