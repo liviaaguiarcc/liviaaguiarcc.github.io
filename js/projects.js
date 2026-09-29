@@ -4,6 +4,7 @@ const dossier = document.querySelector("#project-dossier");
 const dossierContent = document.querySelector("[data-dossier-content]");
 const dossierClose = document.querySelector(".dossier-close");
 let lastFocusedProject = null;
+let activeProjectKey = null;
 
 const list = (items) => `<ul>${items.map((item) => `<li>${item}</li>`).join("")}</ul>`;
 const paragraphs = (items) => items.map((item) => `<p>${item}</p>`).join("");
@@ -80,14 +81,17 @@ filterButtons.forEach((button) => {
 });
 
 const renderDossier = (project) => {
-  const links = project.links.length ? `<section class="case-section"><p class="case-label">Project Links</p><div class="action-row">${project.links.map(([label, href]) => `<a class="button ghost" href="${href}" target="_blank" rel="noreferrer">${label}</a>`).join("")}</div></section>` : "";
-  dossierContent.innerHTML = `<article class="case-study"><header class="case-header"><p class="eyebrow">${project.category}</p><p class="case-meta">${project.status}</p><h1 id="dossier-title">${project.title}</h1>${project.subtitle ? `<p class="case-subtitle">${project.subtitle}</p>` : ""}<p class="lede">${project.summary}</p><ul class="tag-list compact">${project.tags.map((tag) => `<li>${tag}</li>`).join("")}</ul></header>${project.sections.map((section) => `<section class="case-section"><p class="case-label">${section.label ? `${section.label} — ` : ""}${section.title}</p><h2>${section.title}</h2><div class="case-content">${section.content}</div></section>`).join("")}${links}</article>`;
+  const ui = window.I18N?.ui?.projects;
+  const cardCopy = activeProjectKey ? ui?.cards?.[activeProjectKey] : null;
+  const links = project.links.length ? `<section class="case-section"><p class="case-label">${ui?.projectLinks || "Project Links"}</p><div class="action-row">${project.links.map(([label, href]) => `<a class="button ghost" href="${href}" target="_blank" rel="noreferrer">${label}</a>`).join("")}</div></section>` : "";
+  dossierContent.innerHTML = `<article class="case-study"><header class="case-header"><p class="eyebrow">${cardCopy?.kicker || project.category}</p><p class="case-meta">${cardCopy?.status || project.status}</p><h1 id="dossier-title">${project.title}</h1>${project.subtitle ? `<p class="case-subtitle">${project.subtitle}</p>` : ""}<p class="lede">${cardCopy?.summary || project.summary}</p><ul class="tag-list compact">${(cardCopy?.tags || project.tags).map((tag) => `<li>${tag}</li>`).join("")}</ul></header>${project.sections.map((section) => `<section class="case-section"><p class="case-label">${section.label ? `${section.label} — ` : ""}${section.title}</p><h2>${section.title}</h2><div class="case-content">${section.content}</div></section>`).join("")}${links}</article>`;
 };
 
 projectCards.forEach((card) => {
   const openProject = () => {
     const project = projectDetails[card.dataset.project];
     if (!project || !dossier) return;
+    activeProjectKey = card.dataset.project;
     lastFocusedProject = card;
     renderDossier(project);
     dossier.showModal();
@@ -107,6 +111,10 @@ const closeDossier = () => {
   dossier.close();
   lastFocusedProject?.focus?.();
 };
+
+window.addEventListener("i18n:change", () => {
+  if (activeProjectKey && dossier?.open) renderDossier(projectDetails[activeProjectKey]);
+});
 
 dossierClose?.addEventListener("click", closeDossier);
 dossier?.addEventListener("click", (event) => {

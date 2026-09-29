@@ -22,6 +22,14 @@ if (!reduceMotion && "IntersectionObserver" in window) {
 
 const tabButtons = Array.from(document.querySelectorAll('[role="tab"]'));
 
+const localizeInternalUrl = (href) => {
+  if (!window.I18N) return href;
+  const url = new URL(href, window.location.href);
+  if (url.origin !== window.location.origin) return href;
+  url.searchParams.set("lang", window.I18N.lang);
+  return url.href;
+};
+
 const activateTab = (selectedTab) => {
   const tabList = selectedTab.closest('[role="tablist"]');
   const relatedTabs = tabList ? Array.from(tabList.querySelectorAll('[role="tab"]')) : [];
@@ -78,10 +86,11 @@ const thesisCard = document.querySelector(".thesis-card");
 
 if (thesisCard) {
   const flipThesisCard = (forceState) => {
+    const t = window.I18N?.ui?.research;
     const isFlipped = typeof forceState === "boolean" ? forceState : !thesisCard.classList.contains("is-flipped");
     thesisCard.classList.toggle("is-flipped", isFlipped);
     thesisCard.setAttribute("aria-pressed", String(isFlipped));
-    thesisCard.setAttribute("aria-label", isFlipped ? "Flip thesis card back to summary" : "Flip thesis card to read abstract");
+    thesisCard.setAttribute("aria-label", isFlipped ? t?.flipB || "Flip thesis card back to summary" : t?.flipA || "Flip thesis card to read abstract");
     thesisCard.querySelector(".thesis-front")?.setAttribute("aria-hidden", String(isFlipped));
     thesisCard.querySelector(".thesis-back")?.setAttribute("aria-hidden", String(!isFlipped));
   };
@@ -102,6 +111,6 @@ document.addEventListener("click", (event) => {
   if (url.origin !== window.location.origin || link.target) return;
   event.preventDefault();
   document.startViewTransition(() => {
-    window.location.href = link.href;
+    window.location.href = localizeInternalUrl(link.href);
   });
 });
