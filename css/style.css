@@ -146,7 +146,7 @@ body[data-page="home"] .site-footer { padding-block: 0.8rem; }
 body[data-page="about"] .page-intro { margin-bottom: clamp(1rem, 2.5vw, 1.75rem); }
 body[data-page="about"] .page-intro h1 { font-size: clamp(3rem, 7vw, 5rem); }
 .about-editorial { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(1.75rem, 5vw, 4rem); align-items: start; padding-block: clamp(0.5rem, 1.5vw, 1rem) clamp(1.5rem, 4vw, 2.4rem); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.about-statement { max-width: 520px; color: var(--navy); font-family: "DM Serif Display", Georgia, serif; font-size: clamp(2.4rem, 5.5vw, 4.7rem); line-height: 1.02; letter-spacing: -0.035em; }
+.about-statement { align-self: center; max-width: 420px; color: var(--navy); font-family: Parisienne, "DM Serif Display", cursive; font-size: clamp(2.25rem, 3.5vw, 3.35rem); line-height: 1.22; letter-spacing: 0; }
 .about-narrative { display: grid; gap: 0.9rem; max-width: 760px; }
 .about-narrative p { font-size: 1.02rem; }
 .alias-note { margin-top: 0.4rem; padding-top: 0.8rem; border-top: 1px solid var(--border); color: var(--mauve-grey); font-size: 0.9rem !important; }
@@ -154,6 +154,10 @@ body[data-page="about"] .page-intro h1 { font-size: clamp(3rem, 7vw, 5rem); }
 body[data-page="about"] .interest-panel { margin-top: 0; padding: clamp(1.25rem, 3vw, 2rem); }
 body[data-page="about"] .interest-panel h2 { font-size: clamp(2rem, 4.5vw, 3.4rem); }
 .about-interest-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr); gap: 1rem; margin-top: clamp(1.25rem, 3vw, 2rem); }
+.current-interests { display: grid; align-content: space-between; gap: clamp(1.3rem, 3vw, 2.4rem); }
+.current-interests .tag-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin-top: 0; }
+.current-interests .tag-list li { display: grid; place-items: center; min-height: 3rem; padding: 0.7rem 0.95rem; text-align: center; font-size: 0.92rem; }
+.current-interests .tag-list li:nth-child(1), .current-interests .tag-list li:nth-child(6) { grid-column: 1 / -1; justify-self: stretch; }
 .future-group { margin-top: 1rem; }
 .future-group h3 { color: var(--mauve-grey); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
 .future-tags li { background: transparent; border-style: dashed; color: var(--lavender-grey); }
@@ -277,7 +281,8 @@ body[data-page="contact"] .site-footer { padding-block: 0.55rem; }
   .editorial-nav a { padding-top: 0.45rem; }
   .editorial-nav em { display: none; }
   body[data-page="home"] { display: block; }
-  .about-statement { font-size: clamp(2.15rem, 12vw, 3.4rem); }
+  .about-statement { font-size: clamp(2rem, 11vw, 3rem); }
+  .current-interests .tag-list { grid-template-columns: 1fr; }
   .home-page { display: block; padding-block: 2.2rem; }
   .home-hero { gap: 1.5rem; }
   .identity-map { min-height: 360px; margin-top: 1.5rem; }
