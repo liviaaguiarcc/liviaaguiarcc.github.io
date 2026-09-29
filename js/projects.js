@@ -81,10 +81,12 @@ filterButtons.forEach((button) => {
 });
 
 const renderDossier = (project) => {
+  const localizedProject = window.I18N?.projectLocale?.(activeProjectKey);
+  const source = localizedProject || project;
   const ui = window.I18N?.ui?.projects;
   const cardCopy = activeProjectKey ? ui?.cards?.[activeProjectKey] : null;
-  const links = project.links.length ? `<section class="case-section"><p class="case-label">${ui?.projectLinks || "Project Links"}</p><div class="action-row">${project.links.map(([label, href]) => `<a class="button ghost" href="${href}" target="_blank" rel="noreferrer">${label}</a>`).join("")}</div></section>` : "";
-  dossierContent.innerHTML = `<article class="case-study"><header class="case-header"><p class="eyebrow">${cardCopy?.kicker || project.category}</p><p class="case-meta">${cardCopy?.status || project.status}</p><h1 id="dossier-title">${project.title}</h1>${project.subtitle ? `<p class="case-subtitle">${project.subtitle}</p>` : ""}<p class="lede">${cardCopy?.summary || project.summary}</p><ul class="tag-list compact">${(cardCopy?.tags || project.tags).map((tag) => `<li>${tag}</li>`).join("")}</ul></header>${project.sections.map((section) => `<section class="case-section"><p class="case-label">${section.label ? `${section.label} — ` : ""}${section.title}</p><h2>${section.title}</h2><div class="case-content">${section.content}</div></section>`).join("")}${links}</article>`;
+  const links = source.links.length ? `<section class="case-section"><p class="case-label">${ui?.projectLinks || "Project Links"}</p><div class="action-row">${source.links.map(([label, href]) => `<a class="button ghost" href="${href}" target="_blank" rel="noreferrer">${label}</a>`).join("")}</div></section>` : "";
+  dossierContent.innerHTML = `<article class="case-study"><header class="case-header"><p class="eyebrow">${cardCopy?.kicker || source.category}</p><p class="case-meta">${cardCopy?.status || source.status}</p><h1 id="dossier-title">${source.title}</h1>${source.subtitle ? `<p class="case-subtitle">${source.subtitle}</p>` : ""}<p class="lede">${cardCopy?.summary || source.summary}</p><ul class="tag-list compact">${(cardCopy?.tags || source.tags).map((tag) => `<li>${tag}</li>`).join("")}</ul></header>${source.sections.map((section) => `<section class="case-section"><p class="case-label">${section.label ? `${section.label} — ` : ""}${section.title}</p><h2>${section.title}</h2><div class="case-content">${section.content}</div></section>`).join("")}${links}</article>`;
 };
 
 projectCards.forEach((card) => {
