@@ -229,8 +229,8 @@ body[data-page="education"] .archive-tabs { margin-top: 0; }
 
 /* Research */
 .thesis-feature { perspective: 1800px; }
-.thesis-card { width: 100%; min-height: 750px; padding: 0; border: 0; background: transparent; text-align: left; cursor: pointer; perspective: inherit; }
-.thesis-card-inner { position: relative; display: block; min-height: 750px; transition: transform 520ms ease; transform-style: preserve-3d; }
+.thesis-card { width: 100%; min-height: 730px; padding: 0; border: 0; background: transparent; text-align: left; cursor: pointer; perspective: inherit; }
+.thesis-card-inner { position: relative; display: block; min-height: 730px; transition: transform 520ms ease; transform-style: preserve-3d; }
 .thesis-card.is-flipped .thesis-card-inner { transform: rotateY(180deg); }
 .thesis-face { position: absolute; inset: 0; display: grid; align-content: center; gap: 1.1rem; padding: clamp(3.7rem, 5vw, 4.4rem) clamp(1.5rem, 4vw, 3rem); border: 1px solid var(--border); border-radius: var(--radius); background: linear-gradient(145deg, rgba(248,244,246,.88), rgba(202,186,200,.22)); backface-visibility: hidden; box-shadow: var(--shadow); }
 .thesis-back { transform: rotateY(180deg); align-content: start; }
