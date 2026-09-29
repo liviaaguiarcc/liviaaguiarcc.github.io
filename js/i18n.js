@@ -149,6 +149,8 @@ const projectLocales = {
   es: null
 };
 
+UI["pt-BR"].projects.details = projectLocales["pt-BR"];
+
 const validLang = (lang) => SUPPORTED_LANGS.includes(lang) ? lang : "en";
 const getQueryLang = () => new URLSearchParams(window.location.search).get("lang");
 const initialQueryLang = getQueryLang();
@@ -277,5 +279,5 @@ const setLanguage = (lang) => {
   applyTranslations();
 };
 
-window.I18N = { get lang() { return currentLang; }, get ui() { return current(); }, projectLocale: (key) => projectLocales[currentLang]?.[key] || null, setLanguage, applyTranslations };
+window.I18N = { get lang() { return currentLang; }, get ui() { return current(); }, projectLocale: (key) => current().projects?.details?.[key] || projectLocales[currentLang]?.[key] || null, setLanguage, applyTranslations };
 document.addEventListener("DOMContentLoaded", applyTranslations);
