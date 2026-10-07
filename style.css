@@ -14,3 +14,21 @@
 /* Clearer opening note. */
 .hand-note{right:22%}
 @media(max-width:700px){.hand-note{right:27%}}
+
+/* Project studio: the same paper window as the Hangul laboratory. */
+#case-dialog{padding:0;border:1px solid var(--line);border-radius:0;background:var(--paper);box-shadow:12px 15px 0 #ddcfe966;overflow:hidden;max-height:88svh}
+#case-dialog[open]{display:flex;flex-direction:column}
+.dialog-toolbar{flex:0 0 auto;margin:0;padding:22px 28px;letter-spacing:1.7px;background:var(--paper);border-bottom:1px solid var(--line)}
+#close-case{border:1px solid var(--purple);border-radius:0;background:#e1d0ed;color:var(--purple);width:34px;height:34px;font:18px monospace;box-shadow:3px 3px 0 #b8a0ca}
+#case-content{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0 28px 28px}
+.case-header h2{margin-top:25px}.case-section p{font-size:16px}.case-section{border-top:1px solid var(--line);padding-top:18px}.case-note{border:1px solid #b8a0ca;background:#e1d0ed}.case-metrics>div{background:var(--white);border:1px solid var(--line);padding:14px}
+/* Square pixel rail, including the scroll inside project windows. */
+html,#case-content{scrollbar-width:auto;scrollbar-color:#734ca4 #e1d0ed}
+::-webkit-scrollbar{width:16px;height:16px}
+::-webkit-scrollbar-track{background:repeating-linear-gradient(0deg,#e1d0ed 0 4px,#dcc6ed 4px 8px);border-left:2px solid #b8a0ca}
+::-webkit-scrollbar-thumb{border-radius:0;border:3px solid #e1d0ed;background:repeating-linear-gradient(0deg,#734ca4 0 6px,#9470b5 6px 9px);box-shadow:inset 2px 0 #bda0d4}
+::-webkit-scrollbar-thumb:hover{background:#482f57}::-webkit-scrollbar-corner{background:#e1d0ed}
+.coded-title{font-family:monospace!important;letter-spacing:2px;min-height:1.5em;color:var(--purple);white-space:nowrap}
+.soon-row small{display:block;line-height:1.7}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.portrait-note{left:auto;right:0;max-width:72%;text-align:right}
+@media(max-width:700px){#case-dialog{box-shadow:7px 8px 0 #ddcfe966}.dialog-toolbar{padding:18px 20px}#case-content{padding:0 20px 24px}.portrait-note{left:auto;right:0;max-width:80%}}

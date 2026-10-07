@@ -52,3 +52,5 @@ for(const lang of LOCALE_ORDER)Object.assign(COPY[lang],NAME_COPY[lang]);
 COPY['pt-BR'].heroPortraitAlt='Retrato tipográfico de Lívia Aguiar formado por letras de vários alfabetos';COPY.en.heroPortraitAlt='Typographic portrait of Lívia Aguiar made of letters from several writing systems';COPY.es.heroPortraitAlt='Retrato tipográfico de Lívia Aguiar formado por letras de distintos sistemas de escritura';COPY.ko.heroPortraitAlt='여러 문자 체계의 글자로 구성한 리비아 아기아르의 타이포그래피 초상';
 
 ATLAS.ja={word:'日本語',type:'languageInterest',copy:['O japonês amplia meu interesse por sistemas de escrita, recursos linguísticos e possibilidades de NLP multilíngue.','Japanese broadens my interest in writing systems, language resources and multilingual NLP.','El japonés amplía mi interés por los sistemas de escritura, los recursos lingüísticos y el PLN multilingüe.','일본어는 문자 체계, 언어 자원, 다국어 자연어 처리에 대한 관심을 넓혀 주는 언어입니다.']};
+
+['pt-BR','en','es','ko'].forEach((locale,i)=>{COPY[locale].moreSoon=['Mais detalhes em breve.','More details coming soon.','Más detalles próximamente.','자세한 내용은 곧 공개됩니다.'][i]});
