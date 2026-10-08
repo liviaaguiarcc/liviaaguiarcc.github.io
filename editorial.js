@@ -15,3 +15,16 @@ LOCALE_ORDER.forEach((lang,i)=>COPY[lang].nameAccuracy=[
 'Sugerencia basada en reglas para los sonidos del portugués brasileño. La pronunciación, el acento y la preferencia personal pueden cambiar la escritura. Revísala o edítala antes de montar.',
 '브라질 포르투갈어의 소리를 고려한 규칙으로 제안한 표기입니다. 발음, 지역 억양, 개인의 선호에 따라 표기가 달라질 수 있습니다. 조합하기 전에 확인하거나 수정해 주세요.'
 ][i]);
+
+LOCALE_ORDER.forEach((lang,i)=>Object.assign(COPY[lang],{
+petLabel:['Amebinha roxa. Clique para fazer carinho, arraste para mover ou use as setas.','Purple slime. Click to pet, drag to move or use the arrow keys.','Amebita morada. Haz clic para acariciarla, arrástrala o usa las flechas.','보라색 슬라임. 클릭해서 쓰다듬고, 드래그하거나 방향키로 움직여 보세요.'][i],
+petHide:['Esconder amebinha','Hide slime','Ocultar amebita','슬라임 숨기기'][i],
+petShow:['Mostrar amebinha','Show slime','Mostrar amebita','슬라임 보이기'][i]
+}));
+
+LOCALE_ORDER.forEach((lang,i)=>COPY[lang].petLabel=[
+'Amebinha roxa. Dois cliques ou toques rápidos soltam corações. Arraste para mover ou use as setas.',
+'Purple slime. Double-click or double-tap for hearts. Drag to move or use the arrow keys.',
+'Amebita morada. Haz doble clic o toca dos veces para soltar corazones. Arrástrala o usa las flechas.',
+'보라색 슬라임. 두 번 클릭하거나 빠르게 두 번 터치하면 하트가 나와요. 드래그하거나 방향키로 움직여 보세요.'
+][i]);
