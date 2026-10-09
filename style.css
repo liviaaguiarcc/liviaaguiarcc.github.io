@@ -100,3 +100,17 @@ html,#case-content{scrollbar-width:auto;scrollbar-color:#734ca4 #e1d0ed}
 @media(max-width:450px){.case-pet{gap:14px;padding:14px}.case-pet-portrait{flex-basis:72px;width:72px;height:72px}.case-pet-portrait img{width:64px;height:64px}.case-pet h3{font-size:18px}}
 
 .case-pet-portrait img{image-rendering:pixelated}
+
+/* A short dizzy reaction after sustained circular dragging. */
+.pet-dizzy-decoration{display:none;position:absolute;inset:0;pointer-events:none}
+.pet-dizzy .pet-dizzy-decoration{display:block}
+#pixel-pet.pet-dizzy>span:first-child{animation:pet-dizzy-wobble .38s ease-in-out infinite;transform-origin:50% 80%}
+.dizzy-eye{position:absolute;top:38px;width:7px;height:11px;background:#49215e;image-rendering:pixelated}
+.dizzy-eye:after{content:'';position:absolute;left:0;top:1px;width:2px;height:2px;background:#e8d0f4;box-shadow:4px 0 #e8d0f4,2px 2px #e8d0f4,0 4px #e8d0f4,4px 4px #e8d0f4}
+.eye-left{left:22px}.eye-right{left:34px}
+.dizzy-star{position:absolute;left:27px;top:12px;color:#ba9ee3;font-size:14px;line-height:1;animation:pet-dizzy-orbit 1.25s linear infinite}
+.star-two{animation-delay:-.42s;color:#774ba4}.star-three{animation-delay:-.84s;color:#d5b8ec}
+@keyframes pet-dizzy-wobble{0%,100%{rotate:-7deg}50%{rotate:7deg}}
+@keyframes pet-dizzy-orbit{0%{transform:translate(-23px,0);opacity:.7}25%{transform:translate(0,-6px);opacity:1}50%{transform:translate(23px,0);opacity:.7}75%{transform:translate(0,6px);opacity:.4}100%{transform:translate(-23px,0);opacity:.7}}
+@media(prefers-reduced-motion:reduce){#pixel-pet.pet-dizzy>span:first-child,.dizzy-star{animation:none}.star-one{left:9px}.star-three{left:45px}}
+body.motion-off #pixel-pet.pet-dizzy>span:first-child,body.motion-off .dizzy-star{animation:none}
