@@ -98,3 +98,5 @@ html,#case-content{scrollbar-width:auto;scrollbar-color:#734ca4 #e1d0ed}
 .case-pet h3{font-size:20px;color:var(--purple);margin:4px 0 7px}
 .case-pet p{font-size:15px;line-height:1.7;color:var(--muted);margin:0}
 @media(max-width:450px){.case-pet{gap:14px;padding:14px}.case-pet-portrait{flex-basis:72px;width:72px;height:72px}.case-pet-portrait img{width:64px;height:64px}.case-pet h3{font-size:18px}}
+
+.case-pet-portrait img{image-rendering:pixelated}
