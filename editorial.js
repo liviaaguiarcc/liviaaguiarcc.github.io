@@ -28,30 +28,3 @@ LOCALE_ORDER.forEach((lang,i)=>COPY[lang].petLabel=[
 'Amebita morada. Haz doble clic o toca dos veces para soltar corazones. Arrástrala o usa las flechas.',
 '보라색 슬라임. 두 번 클릭하거나 빠르게 두 번 터치하면 하트가 나와요. 드래그하거나 방향키로 움직여 보세요.'
 ][i]);
-
-// HanLevel v1.0 adds a tutor grounded in the text and analyzer output.
-const HANLEVEL_V1_DESCRIPTIONS=[
-'Um analisador interpretável de legibilidade em coreano, agora com Mongle (몽글), tutor com IA. Estima o nível de leitura, explica os fatores de dificuldade e ajuda a explorar o texto, o vocabulário e a gramática.',
-'An interpretable Korean readability profiler, now with Mongle (몽글), an AI tutor. It estimates reading level, explains the difficulty factors and helps you explore the text, vocabulary and grammar.',
-'Un analizador interpretable de legibilidad en coreano, ahora con Mongle (몽글), un tutor con IA. Estima el nivel de lectura, explica los factores de dificultad y ayuda a explorar el texto, el vocabulario y la gramática.',
-'한국어 텍스트의 난이도를 설명하는 분석 도구에 AI 튜터 몽글이 더해졌습니다. 읽기 수준을 추정하고 난이도에 영향을 주는 요인을 보여 주며, 텍스트와 어휘, 문법을 함께 살펴볼 수 있습니다.'
-];
-LOCALE_ORDER.forEach((lang,i)=>COPY[lang].hanlevelDescription=HANLEVEL_V1_DESCRIPTIONS[i]);
-CASES.hanlevel.title='HanLevel v1.0';
-CASES.hanlevel.tools='Python · Streamlit · KIWI / kiwipiepy · KRDICT · Gemini API';
-CASES.hanlevel.contribution=[
-'Construí um perfil que combina vocabulário, gramática e extensão das frases, com pontuação e contribuições visíveis. Na v1.0, integrei Mongle (몽글), tutor com IA que recebe o texto e a análise como contexto para explicar estruturas, explorar palavras e sugerir reformulações. A IA não atribui o nível de leitura.',
-'I built a profile combining vocabulary, grammar and sentence length, with visible scores and contributions. In v1.0, I integrated Mongle (몽글), an AI tutor that receives the text and analysis as context to explain structures, explore words and suggest rewrites. The AI does not assign the reading level.',
-'Construí un perfil que combina vocabulario, gramática y longitud de las oraciones, con puntuaciones y contribuciones visibles. En la v1.0 integré Mongle (몽글), un tutor con IA que recibe el texto y el análisis como contexto para explicar estructuras, explorar palabras y sugerir reformulaciones. La IA no asigna el nivel de lectura.',
-'어휘, 문법, 문장 길이를 결합해 점수와 각 요소의 기여도를 보여 주는 분석 도구를 만들었습니다. v1.0에는 텍스트와 분석 결과를 맥락으로 받아 문법과 어휘를 설명하고 다른 표현을 제안하는 AI 튜터 몽글을 추가했습니다. 읽기 수준은 AI가 결정하지 않습니다.'
-];
-CASES.hanlevel.results=[
-'A v1.0 conecta o perfil de legibilidade a uma conversa sobre o mesmo texto, com perguntas sugeridas e acompanhamento das respostas. A interface está disponível em português, inglês e espanhol. O índice lexical offline mantém a consulta ao KRDICT compacta, com cerca de 1,79 MB. A validação externa em um corpus maior continua como próximo passo.',
-'v1.0 connects the readability profile to a conversation about the same text, with suggested questions and follow-up exchanges. The interface is available in Portuguese, English and Spanish. The offline lexical index keeps KRDICT lookup compact at about 1.79 MB. External validation on a larger corpus remains a next step.',
-'La v1.0 conecta el perfil de legibilidad con una conversación sobre el mismo texto, con preguntas sugeridas y seguimiento de las respuestas. La interfaz está disponible en portugués, inglés y español. El índice léxico sin conexión mantiene compacta la consulta al KRDICT, con unos 1,79 MB. La validación externa en un corpus mayor sigue siendo el próximo paso.',
-'v1.0은 읽기 난이도 분석을 같은 텍스트에 대한 대화로 연결하며, 추천 질문과 후속 질문을 지원합니다. 인터페이스는 포르투갈어, 영어, 스페인어로 제공됩니다. 약 1.79 MB의 오프라인 어휘 색인으로 KRDICT 자료를 조회하며, 더 큰 코퍼스를 활용한 외부 검증은 다음 과제로 남아 있습니다.'
-];
-CASES.hanlevel.links=CASES.hanlevel.links.map(([label,href])=>[
-label,
-label==='GitHub'?'https://github.com/liviaaguiarcc/HanLevel/tree/forge-v1.0':href
-]);
