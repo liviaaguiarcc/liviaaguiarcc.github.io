@@ -83,3 +83,18 @@ html,#case-content{scrollbar-width:auto;scrollbar-color:#734ca4 #e1d0ed}
 @keyframes pet-heart-rise{0%{opacity:0;transform:translate(0,0) scale(.7)}15%{opacity:1}100%{opacity:0;transform:translate(var(--heart-drift,0),-65px) scale(1.1)}}
 .motion-off .pet-heart{animation:pet-heart-still 1.1s linear both}@keyframes pet-heart-still{0%,80%{opacity:1}100%{opacity:0}}
 @media(prefers-reduced-motion:reduce){.pet-heart{animation:pet-heart-still 1.1s linear both!important}}
+
+/* Consistent project copy, links and project-specific mascot profile. */
+#case-content .case-section ul{padding-left:22px;margin:0;color:var(--muted);font-size:16px;line-height:1.8}
+#case-content .case-section li+li{margin-top:8px}
+#case-content .case-links a,#case-content .case-section summary{color:var(--purple)}
+#case-content .case-section summary{font-size:14px;cursor:pointer}
+#case-content .case-links a:hover,#case-content .case-section summary:hover{color:var(--muted)}
+.case-pet{display:flex;align-items:center;gap:20px;border:1px solid var(--line);background:var(--white);padding:18px;margin-top:24px}
+.case-pet-portrait{display:grid;place-items:center;flex:0 0 96px;width:96px;height:96px;background:#e1d0ed;border:1px solid var(--line);box-shadow:4px 4px 0 #ddcfe966}
+.case-pet-portrait img{display:block;width:80px;height:80px;transition:transform .2s ease}
+.case-pet-portrait:hover img{transform:translateY(-3px)}
+.case-pet-label{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--purple)}
+.case-pet h3{font-size:20px;color:var(--purple);margin:4px 0 7px}
+.case-pet p{font-size:15px;line-height:1.7;color:var(--muted);margin:0}
+@media(max-width:450px){.case-pet{gap:14px;padding:14px}.case-pet-portrait{flex-basis:72px;width:72px;height:72px}.case-pet-portrait img{width:64px;height:64px}.case-pet h3{font-size:18px}}
