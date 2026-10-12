@@ -114,3 +114,25 @@ html,#case-content{scrollbar-width:auto;scrollbar-color:#734ca4 #e1d0ed}
 @keyframes pet-dizzy-orbit{0%{transform:translate(-23px,0);opacity:.7}25%{transform:translate(0,-6px);opacity:1}50%{transform:translate(23px,0);opacity:.7}75%{transform:translate(0,6px);opacity:.4}100%{transform:translate(-23px,0);opacity:.7}}
 @media(prefers-reduced-motion:reduce){#pixel-pet.pet-dizzy>span:first-child,.dizzy-star{animation:none}.star-one{left:9px}.star-three{left:45px}}
 body.motion-off #pixel-pet.pet-dizzy>span:first-child,body.motion-off .dizzy-star{animation:none}
+
+/* Achievement cards expand by touch, mouse or keyboard. */
+.education-highlights{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:20px}
+.achievement-card{border:1px solid var(--line);background:var(--white);box-shadow:5px 6px 0 #ddcfe966;min-width:0}
+.achievement-card summary{display:block;cursor:pointer;list-style:none;padding:24px;transition:background .2s}
+.achievement-card summary::-webkit-details-marker{display:none}
+.achievement-card summary:hover{background:#e9dff2}
+.achievement-card summary:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+.achievement-card small{font-size:12px;letter-spacing:1.5px;color:var(--purple)}
+.achievement-card h3{font:26px/1.2 var(--serif);margin:15px 0}
+.achievement-card p{font-size:13px;color:var(--muted);margin:5px 0}
+.achievement-hint{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:12px;color:var(--purple);margin-top:18px}
+.achievement-hint b{font-size:22px;transition:rotate .2s}
+.achievement-card[open] .achievement-hint b{rotate:45deg}
+.achievement-content{padding:0 24px 24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;line-height:1.7;animation:achievement-reveal .25s ease-out}
+.achievement-content h4{color:var(--purple);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin:20px 0 12px}
+.achievement-content ul,.achievement-content ol{padding-left:20px;margin:0 0 18px}
+.achievement-content li+li{margin-top:8px}
+.achievement-content a{color:var(--purple);border-bottom:1px solid var(--line);font-size:12px}
+@keyframes achievement-reveal{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){.education-highlights{grid-template-columns:1fr}.achievement-card summary{padding:20px}.achievement-content{padding:0 20px 20px}}
+@media(prefers-reduced-motion:reduce){.achievement-content{animation:none}.achievement-hint b{transition:none}}
