@@ -232,3 +232,6 @@ html[lang=ko] h2{font-size:clamp(30px,3vw,45px)}
 @media(min-width:1000px){#atlas{padding-left:6%;padding-right:6%}}
 @media(min-width:701px) and (max-width:999px){#atlas{--atlas-columns:minmax(0,1.6fr) minmax(230px,1fr)}.atlas-map{height:360px}.map-node{font-size:12px;padding:6px 8px}}
 @media(max-width:700px){#atlas{--atlas-columns:1fr}.atlas-map{height:350px}.atlas-card{min-height:0}.map-node{font-size:12px;padding:6px}.atlas-heading>div{margin-top:18px}}
+
+/* Slightly more breathing room between the map border and profile copy. */
+@media(min-width:701px){.atlas-heading,.atlas-layout{column-gap:44px}}
