@@ -214,3 +214,21 @@ html[lang=ko] h2{font-size:clamp(30px,3vw,45px)}
 @media(min-width:1000px){#atlas{--atlas-columns:2.4fr 1fr;padding-left:4%;padding-right:4%;padding-top:24px;padding-bottom:28px}.atlas-heading{margin-top:20px;margin-bottom:18px}}
 @media(min-width:701px) and (max-width:999px){#atlas{--atlas-columns:1.9fr 1fr}.atlas-map{height:clamp(330px,52svh,440px)}}
 @media(max-width:700px){.atlas-map{height:360px;min-height:360px}.atlas-card{min-height:200px}}
+
+/* A balanced atlas with geometry based on the actual node positions. */
+#atlas{--atlas-columns:minmax(0,1.85fr) minmax(260px,1fr)}
+.atlas-heading,.atlas-layout{column-gap:28px}
+.atlas-heading{align-items:center}
+.atlas-heading>div{font-size:14px;line-height:1.65}
+.atlas-layout{align-items:stretch}
+.atlas-map{height:clamp(340px,48svh,440px);min-height:0;max-height:none;aspect-ratio:auto}
+.atlas-map svg{pointer-events:none}
+.atlas-card{min-height:0;padding:22px 0}
+.atlas-card h3{font-size:clamp(36px,3.7vw,52px);line-height:1.1;margin:18px 0}
+.atlas-card p{font-size:14px;line-height:1.75}
+.map-node{font-size:14px;padding:7px 10px}
+.map-node small{font-size:10px;padding-top:4px}
+.map-footnote{font-size:10px;line-height:1.4;max-width:calc(100% - 30px)}
+@media(min-width:1000px){#atlas{padding-left:6%;padding-right:6%}}
+@media(min-width:701px) and (max-width:999px){#atlas{--atlas-columns:minmax(0,1.6fr) minmax(230px,1fr)}.atlas-map{height:360px}.map-node{font-size:12px;padding:6px 8px}}
+@media(max-width:700px){#atlas{--atlas-columns:1fr}.atlas-map{height:350px}.atlas-card{min-height:0}.map-node{font-size:12px;padding:6px}.atlas-heading>div{margin-top:18px}}
