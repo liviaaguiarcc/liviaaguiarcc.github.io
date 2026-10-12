@@ -151,3 +151,51 @@ body.motion-off #pixel-pet.pet-dizzy>span:first-child,body.motion-off .dizzy-sta
 .achievement-card h3{font-size:24px;line-height:1.25;min-height:90px;margin:12px 0}
 @media(max-width:700px){.achievement-card summary{height:340px}}
 @media(max-width:380px){.achievement-card summary{height:380px}.achievement-card h3{font-size:22px}}
+
+/* Compact closed achievements; full names and details stay inside. */
+.achievement-card summary{height:210px;padding:16px}
+.education-highlights .achievement-card h3{font-size:21px;line-height:1.2;min-height:52px;margin:8px 0}
+.education-highlights .achievement-card p{font-size:12px;line-height:1.45;margin:3px 0}
+.achievement-hint{font-size:11px}
+.achievement-card .achievement-hint{padding-top:8px}
+.achievement-full-title{padding-top:15px;color:var(--purple)!important}
+.more-projects{margin-top:16px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.more-projects>summary{cursor:pointer;color:var(--purple);font-size:13px;padding:8px 0}
+@media(min-width:1000px){
+.section{padding-top:32px;padding-bottom:36px;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.section-label{padding-bottom:12px;font-size:10px}
+.section-title{margin:24px 0 22px;gap:24px}
+h2{font-size:clamp(34px,3.4vw,52px)}
+html[lang=ko] h2{font-size:clamp(30px,3vw,45px)}
+.section-title>p{font-size:14px;line-height:1.55;margin:0}
+.featured-project{min-height:0}
+.feature-copy{padding:22px 28px}
+.feature-copy h3{font-size:48px;line-height:1.05;margin:12px 0}
+.feature-copy .project-subtitle{font-size:17px;margin:10px 0}
+.feature-copy>p:not(.project-subtitle){font-size:14px;line-height:1.6;margin:12px 0}
+.profiler-stage{padding:22px 32px}
+.profiler-panel{padding:18px;max-width:320px}
+.sample-text{font-size:23px;line-height:1.4;margin-top:16px}
+.profile-result{margin:12px 0}
+.profile-bars>div{margin:10px 0}
+.feature-stamp{font-size:22px}
+.atlas-heading{margin:24px 0 20px}
+.atlas-map{min-height:250px;max-height:46svh}
+.lab-layout,.about-layout{margin-top:28px}
+.lab-intro h2,.about-copy h2{margin-bottom:18px}
+.hangul-lab{padding:20px}
+.portrait-tilt img{height:min(38svh,310px)}
+.portrait-tilt figcaption{padding-top:12px;font-size:19px}
+.about-copy>p{font-size:14px;line-height:1.6;margin:12px 0}
+.interest-words{margin-top:16px}
+.education-highlights{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.education-details{margin-top:18px}
+.research-note{margin-top:22px;max-width:100%}
+.research-note h3{font-size:23px;margin:8px 0}
+.research-note p{font-size:13px;line-height:1.5;margin:8px 0}
+.contact>p{margin-top:26px}
+.contact h2{font-size:clamp(48px,5.4vw,82px)}
+.contact-links{margin:24px 0 36px}
+}
+@media(max-width:999px){.section{padding-top:36px;padding-bottom:42px}.section-title{margin-top:28px;margin-bottom:24px}.education-highlights{gap:14px}}
+@media(max-width:700px){.achievement-card summary{height:200px}.education-highlights .achievement-card h3{font-size:21px;min-height:52px}.more-projects{margin-top:12px}}

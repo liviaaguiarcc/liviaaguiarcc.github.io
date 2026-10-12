@@ -28,3 +28,8 @@ LOCALE_ORDER.forEach((lang,i)=>COPY[lang].petLabel=[
 'Amebita morada. Haz doble clic o toca dos veces para soltar corazones. Arrástrala o usa las flechas.',
 '보라색 슬라임. 두 번 클릭하거나 빠르게 두 번 터치하면 하트가 나와요. 드래그하거나 방향키로 움직여 보세요.'
 ][i]);
+
+const COMPACT_LABELS=[['Outros projetos e próximos passos','IBM Data Analyst','Ensino de Coreano · USP'],['More projects and what’s next','IBM Data Analyst','Korean Language Teaching · USP'],['Otros proyectos y próximos pasos','IBM Data Analyst','Enseñanza de Coreano · USP'],['다른 프로젝트와 앞으로의 계획','IBM 데이터 분석가','한국어 교육 · USP']];
+LOCALE_ORDER.forEach((lang,i)=>COPY[lang].moreProjects=COMPACT_LABELS[i][0]);
+EDUCATION.find(e=>e.place==='IBM · Coursera'&&e.featured).shortTitles=COMPACT_LABELS.map(x=>x[1]);
+EDUCATION.find(e=>e.place==='USP · FFLCH').shortTitles=COMPACT_LABELS.map(x=>x[2]);
