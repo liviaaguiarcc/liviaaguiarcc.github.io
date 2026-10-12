@@ -199,3 +199,10 @@ html[lang=ko] h2{font-size:clamp(30px,3vw,45px)}
 }
 @media(max-width:999px){.section{padding-top:36px;padding-bottom:42px}.section-title{margin-top:28px;margin-bottom:24px}.education-highlights{gap:14px}}
 @media(max-width:700px){.achievement-card summary{height:200px}.education-highlights .achievement-card h3{font-size:21px;min-height:52px}.more-projects{margin-top:12px}}
+
+/* Atlas introduction and language profile share the same column edge. */
+#atlas{--atlas-columns:2fr .8fr}
+.atlas-heading,.atlas-layout{grid-template-columns:var(--atlas-columns);column-gap:30px}
+.atlas-heading>div{max-width:none;width:100%;justify-self:stretch}
+@media(max-width:1000px){#atlas{--atlas-columns:1.7fr 1fr}}
+@media(max-width:700px){#atlas{--atlas-columns:1fr}.atlas-heading{display:block}.atlas-heading>div{margin-left:0}}
