@@ -136,3 +136,18 @@ body.motion-off #pixel-pet.pet-dizzy>span:first-child,body.motion-off .dizzy-sta
 @keyframes achievement-reveal{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:700px){.education-highlights{grid-template-columns:1fr}.achievement-card summary{padding:20px}.achievement-content{padding:0 20px 20px}}
 @media(prefers-reduced-motion:reduce){.achievement-content{animation:none}.achievement-hint b{transition:none}}
+
+/* Equal closed achievement cards, with details scrolling within a shared limit. */
+.achievement-card summary{height:280px;display:flex;flex-direction:column;box-sizing:border-box}
+.achievement-card h3{min-height:64px;display:flex;align-items:center;flex:0 0 auto}
+.achievement-card .achievement-hint{margin-top:auto;padding-top:14px}
+.achievement-content{max-height:380px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--purple) #e1d0ed}
+.achievement-content::-webkit-scrollbar{width:8px}
+.achievement-content::-webkit-scrollbar-track{background:#e1d0ed}
+.achievement-content::-webkit-scrollbar-thumb{background:var(--purple);border:2px solid #e1d0ed;border-radius:0}
+@media(max-width:700px){.achievement-card summary{height:270px}.achievement-content{max-height:340px}}
+@media(max-width:380px){.achievement-card summary{height:310px}.achievement-card h3{min-height:88px}}
+.achievement-card summary{height:340px}
+.achievement-card h3{font-size:24px;line-height:1.25;min-height:90px;margin:12px 0}
+@media(max-width:700px){.achievement-card summary{height:340px}}
+@media(max-width:380px){.achievement-card summary{height:380px}.achievement-card h3{font-size:22px}}
